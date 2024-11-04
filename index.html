@@ -4,7 +4,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>Chatbot</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+
+
 <style>
 
 /* ########################creamco######################## */
@@ -12,6 +17,9 @@
 :root {
 
   --context-keyword: "creamco"; 
+  --company-main-url: "https://www.cream-collection.de";
+  --company-logo-url: url("https://www.cream-collection.de/wp-content/uploads/go-x/u/59b84de7-525d-4992-99ec-ac57b73c25b6/image-640x211.png");
+  --company-logo-background: var(--secondary-background-color);
   --company-name: "cream collection Stephan Vila";
   --company-street: "Roswithastraße 28";
   --company-city: "45131 Essen";
@@ -23,6 +31,8 @@
   --website-standard-font-color-light: #fff;
   --website-standard-font-color-dark: #000;
   --primary-company-border-radius: 8px;
+  --company-font-family: "Quicksand";
+  --company-font-weight: 400;
   --company-font-size-title: 27px;
   --company-font-size-subtitle: 18px;
   --company-font-size-text: 18px;
@@ -39,6 +49,8 @@
 :root {
  
   --context-keyword: "secunet";
+  --company-main-url: url("www.cream-collection.de");
+  --company-logo-url: url("https://www.cream-collection.de/wp-content/uploads/go-x/u/59b84de7-525d-4992-99ec-ac57b73c25b6/image-640x211.png");
   --company-name: "cream collection Stephan Vila";
   --company-street: "Roswithastraße 28";
   --company-city: "45131 Essen";
@@ -97,7 +109,8 @@
 
 
 html, body {
-  font-family: "nunito-sans" , sans-serif;
+  font-family:  var(--company-font-family);
+  font-weight: var(--company-font-weight);
   background-color: var(--primary-background-color);
   box-sizing: border-box;
   margin: 0;
@@ -110,7 +123,7 @@ html, body {
 #logo-header {
     width: 100%;
     height: 150px;
-    background-color: var(--secondary-background-color);
+    background-color: var(--company-logo-background);
     display: flex;
     align-items: center;
     padding-left: 20px;
@@ -119,23 +132,23 @@ html, body {
 
 #separate-header {
     width: 100%;
-    height: 5vh;
+    height: 150px;
     background-color: var(--primary-company-color);
     display: flex;
     align-items: center;
     position: fixed;
-    bottom: 0; /* Positioniert den Header am unteren Bildschirmrand */
+    bottom: 0;
     left: 0;
-    z-index: 1000; /* Stellt sicher, dass der Header über anderen Elementen liegt */
+    z-index: 1000;So, erste FRra
 }
 
 
-#customer-logo {
-  background-image: url("https://www.cream-collection.de/wp-content/uploads/go-x/u/59b84de7-525d-4992-99ec-ac57b73c25b6/image-640x211.png");
+#company-logo {
+    background-image: var(--company-logo-url);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 250px; 
-    height: 100px;
+    width: 200px; 
+    height: 80px;
 }
 
 
@@ -149,10 +162,10 @@ html, body {
     max-height: 800px;
     display: block; 
     position: fixed;
-    bottom: 20px; 
+    top: 50%; 
     left: 50%;
-    transform: translate(-50%); 
-    background-color: var(--secondary-background-color);
+    transform: translate(-50%, -50%); 
+    background-color: var(--primary-background-color);
     border: 2px solid var(--secondary-border-color);
     border-radius: var(--primary-border-radius);
     cursor: move; 
@@ -277,6 +290,19 @@ html, body {
 
 /* ++++++++++++++++++++++++ Anwendung Clara ++++++++++++++++++++++++
 
+
+
+
+#logo-header {
+    display: none;
+}
+
+#separate-header {
+    display: none;
+}
+
+
+
 #title-container {
   display: flex;
 }
@@ -380,6 +406,16 @@ html, body {
 
 /* ++++++++++++++++++++++++ Anwendung Chatbot mit Kontaktformular ++++++++++++++++++++++++ 
 
+
+#logo-header {
+    display: none;
+}
+
+#separate-header {
+    display: none;
+}
+
+
 #title-container {
   display: none;
 }
@@ -421,6 +457,15 @@ html, body {
 
 
 /* ++++++++++++++++++++++++ Anwendung Chatbot mit Outlook ++++++++++++++++++++++++ 
+
+#logo-header {
+    display: none;
+}
+
+#separate-header {
+    display: none;
+}
+
 
 #title-container {
   display: none;
@@ -2253,8 +2298,10 @@ textarea:-webkit-autofill {
 <body>
 
 <div id="logo-header">
-    <div id="customer-logo" alt="Customer Logo">
+    <a href="https://www.cream-collection.de" target="_blank">
+    <div id="company-logo" alt="Company Logo">
     </div>    
+    </a>
 
 </div>
 
@@ -5000,6 +5047,14 @@ function forwardBotMessage() {
 }
 
 
+
+// Setze die URL dynamisch basierend auf der CSS-Variable
+const companyMainUrl = getComputedStyle(document.documentElement)
+    .getPropertyValue('--company-main-url')
+    .trim();
+
+// Füge die URL zum Link hinzu
+document.getElementById('company-main-url').href = companyMainUrl;
 
 
 
