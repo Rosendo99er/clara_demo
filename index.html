@@ -33,7 +33,7 @@
   --website-standard-font-color-light: #fff;
   --website-standard-font-color-dark: #000;
   --primary-company-border-radius: 8px;
-  --company-font-family: "OpenSans", sans-serif;
+  --company-font-family: Helvetica, sans-serif;
   --company-font-weight: 300;
   --company-font-size-title: 27px;
   --company-font-size-subtitle: 18px;
@@ -65,7 +65,7 @@
   --website-standard-font-color-light: #fff;
   --website-standard-font-color-dark: #000;
   --primary-company-border-radius: 8px;
-  --company-font-family: "OpenSans";
+  --company-font-family: inherit;
   --company-font-weight: 300;
   --company-font-size-title: 27px;
   --company-font-size-subtitle: 18px;
@@ -88,60 +88,11 @@
   --rules-context: "ChatbotConsumer"; 
 }
 
-@font-face {
-    font-family: 'OpenSans';
-    src: url('https://vast-citadel-93222-f91f10e46ebf.herokuapp.com/static/fonts/OpenSans-Light.ttf') format('truetype');
-}
 
-
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('https://vast-citadel-93222-f91f10e46ebf.herokuapp.com/static/fonts/Quicksand-Light.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('https://vast-citadel-93222-f91f10e46ebf.herokuapp.com/static/fonts/Quicksand-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('https://vast-citadel-93222-f91f10e46ebf.herokuapp.com/static/fonts/Quicksand-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('https://vast-citadel-93222-f91f10e46ebf.herokuapp.com/static/fonts/Quicksand-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('https://vast-citadel-93222-f91f10e46ebf.herokuapp.com/static/fonts/Quicksand-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('https://vast-citadel-93222-f91f10e46ebf.herokuapp.com/static/fonts/Quicksand-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
 
 
 html, body {
-  font-family: var(--company-font-family); 
-  font-weight: var(--company-font-weight);
+  font-family: var(--company-font-family);
   background-color: var(--primary-background-color);
   box-sizing: border-box;
   margin: 0;
@@ -677,14 +628,7 @@ html, body {
       font-size: var(--media-font-size-text);
     }
 
-
-
 }
-
-
-
-
-
 
 
 
