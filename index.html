@@ -5,11 +5,10 @@
 <title>Chatbot</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
 
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
-
+<!-- Der Abruf von Google-Fonts darf nur im Kontext "Clara free" aktiviert sein! -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&amp;display=swap" rel="stylesheet" />
 
 
 <style>
@@ -18,7 +17,7 @@
 
 :root {
 
-  --rules-customer: "creamco"; 
+  --rules-customer: creamco; 
   --company-main-url: "https://www.cream-collection.de";
   --company-logo-url: url("https://www.cream-collection.de/wp-content/uploads/go-x/u/59b84de7-525d-4992-99ec-ac57b73c25b6/image-640x211.png");
   --company-logo-background: var(--secondary-background-color);
@@ -50,7 +49,7 @@
 
 :root {
 
-  --rules-customer: "Demonstrator Inkasso GmbH"; 
+  --rules-customer: Demonstrator Inkasso GmbH; 
   --company-main-url: "https://www.cream-collection.de";
   --company-logo-url: url("https://www.cream-collection.de/wp-content/uploads/go-x/u/59b84de7-525d-4992-99ec-ac57b73c25b6/image-640x211.png");
   --company-logo-background: var(--secondary-background-color);
@@ -65,7 +64,7 @@
   --website-standard-font-color-light: #fff;
   --website-standard-font-color-dark: #000;
   --primary-company-border-radius: 8px;
-  --company-font-family: inherit;
+  --company-font-family: 'Quicksand', sans-serif;
   --company-font-weight: 300;
   --company-font-size-title: 27px;
   --company-font-size-subtitle: 18px;
@@ -79,13 +78,54 @@
 
 ######################## */
 
+  --primary-link-color: var(--primary-company-color);
+  --secondary-link-color: var(--secondary-company-color);
 
+
+  --body-background-color: var(--primary-background-company-Color);
+
+  --primary-border-color:   var(--form-and-field-company-color);
+  --secondary-border-color: var(--primary-company-color);
+  --tertiary-border-color:  var(--tertiary-company-color);
+
+
+  --primary-font-color: var(--primary-company-color);
+  --secondary-font-color: var(--secondary-company-color);
+  --tertiary-font-color:  var(--website-standard-font-color-light);
+  --tertiary-font-color-dark: var(--website-standard-font-color-dark);
+ 
+
+  --primary-button-color: var(--primary-company-color);
+  --secondary-button-color: var(--secondary-company-color);
+
+  --primary-loader-color: var(--tertiary-company-color-light);
+  --secondary-loader-color: var(--primary-company-color);
+
+  --primary-background-color: var(--primary-background-company-color);
+  --secondary-background-color: var(--tertiary-company-color-light);
+  --special-background-color: var(--primary-company-color);
+
+  --primary-border-radius: var(--primary-company-border-radius);
+
+  --font-size-title: var(--company-font-size-title);
+  --font-size-subtitle: var(--company-font-size-subtitle);
+  --font-size-text: var(--company-font-size-text);
+  --font-size-finePrint: var(--company-font-size-finePrint);
+  --font-size-button: var(--company-font-size-button);
+
+  --media-font-size-title: 18px;
+  --media-font-size-subtitle: 16px;
+  --media-font-size-text: 16px;
+  --media-font-size-finePrint: 14px;
+  --media-font-size-button: 16px;
+
+}
 
 
 /* ++++++++++++++++++++++++ Anwendung Clara free ++++++++++++++++++++++++ */
 
 :root {
-  --rules-context: "ChatbotConsumer"; 
+--rules-context: ChatbotIntern; 
 }
 
 html, body {
@@ -94,8 +134,8 @@ html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 
@@ -168,13 +208,38 @@ html, body {
   display: none;
 }
 
+#clara-image {
+  display: block;
+}
+
+
 
 @media screen and (max-width: 576px) {
 
-    #title-container {
+
+
+
+
+  #logo-header {
+    width: 100%;
+    height: 10%;
+  }
+
+  #separate-header {
+    width: 100%;
+    height: 10%;
+  }
+
+
+  #company-logo {
+    width: 100px; 
+    height: 40px;
+  }
+
+  #title-container {
         width: 100%;
         padding: 0px;
-        margin: 0px;
+        margin-top: 15px;
 
     }
 
@@ -202,25 +267,31 @@ html, body {
         margin-left: 0px;
      }
 
-}
 
 
 
-#clara-image {
-  display: block;
-}
 
 
-@media screen and (max-width: 576px) {
-    #clara-image {
-        display: none;
-        width: 0 !important;
-        height: 0 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #clara-image {
+    display: none;
+  }
 }
 
 
@@ -237,11 +308,6 @@ html, body {
   display: none;
 }
 
-
-#chatbot-container {
-  display: flex;
-  margin-top: 10px;
-}
 
 #instant-answer-dialog-button-container {
   display: none;
@@ -264,16 +330,11 @@ html, body {
 
 
 
-
-
-
-/* ++++++++++++++++++++++++ Anwendung Clara ++++++++++++++++++++++++
+/* ++++++++++++++++++++++++ Anwendung Clara ++++++++++++++++++++++++ 
 
 :root {
-  --rules-context: "ChatbotConsumer"; 
+--rules-context: ChatbotConsumer; 
 }
-
-
 
 #logo-header {
     display: none;
@@ -283,8 +344,6 @@ html, body {
     display: none;
 }
 
-
-
 #title-container {
   display: flex;
 }
@@ -292,6 +351,12 @@ html, body {
 .title-content .custom0c-p {
   display: none;
 }
+
+#clara-image {
+  display: block;
+}
+
+
 
 
 @media screen and (max-width: 576px) {
@@ -327,16 +392,6 @@ html, body {
         margin-left: 0px;
      }
 
-}
-
-
-
-#clara-image {
-  display: block;
-}
-
-
-@media screen and (max-width: 576px) {
     #clara-image {
         display: none;
         width: 0 !important;
@@ -381,7 +436,7 @@ html, body {
 }
 
 
- ++++++++++++++++++++++++ ENDE Anwendung Clara ++++++++++++++++++++++++ */
+  ++++++++++++++++++++++++ ENDE Anwendung Clara ++++++++++++++++++++++++ */
 
 
 
@@ -389,9 +444,8 @@ html, body {
 /* ++++++++++++++++++++++++ Anwendung Chatbot mit Kontaktformular ++++++++++++++++++++++++ 
 
 :root {
-  --rules-context: "ChatbotContact"; 
+--rules-context: ChatbotContact; 
 }
-
 
 #logo-header {
     display: none;
@@ -445,9 +499,8 @@ html, body {
 /* ++++++++++++++++++++++++ Anwendung Chatbot mit Outlook ++++++++++++++++++++++++ 
 
 :root {
-  --rules-context: "ChatbotOutlook"; 
+--rules-context: ChatbotOutlook; 
 }
-
 
 #logo-header {
     display: none;
@@ -516,48 +569,7 @@ html, body {
 
 
 
-  --primary-link-color: var(--primary-company-color);
-  --secondary-link-color: var(--secondary-company-color);
-
-
-  --body-background-color: var(--primary-background-company-Color);
-
-  --primary-border-color:   var(--form-and-field-company-color);
-  --secondary-border-color: var(--primary-company-color);
-  --tertiary-border-color:  var(--tertiary-company-color);
-
-
-  --primary-font-color: var(--primary-company-color);
-  --secondary-font-color: var(--secondary-company-color);
-  --tertiary-font-color:  var(--website-standard-font-color-light);
-  --tertiary-font-color-dark: var(--website-standard-font-color-dark);
  
-
-  --primary-button-color: var(--primary-company-color);
-  --secondary-button-color: var(--secondary-company-color);
-
-  --primary-loader-color: var(--tertiary-company-color-light);
-  --secondary-loader-color: var(--primary-company-color);
-
-  --primary-background-color: var(--primary-background-company-color);
-  --secondary-background-color: var(--tertiary-company-color-light);
-  --special-background-color: var(--primary-company-color);
-
-  --primary-border-radius: var(--primary-company-border-radius);
-
-  --font-size-title: var(--company-font-size-title);
-  --font-size-subtitle: var(--company-font-size-subtitle);
-  --font-size-text: var(--company-font-size-text);
-  --font-size-finePrint: var(--company-font-size-finePrint);
-  --font-size-button: var(--company-font-size-button);
-
-  --media-font-size-title: 18px;
-  --media-font-size-subtitle: 16px;
-  --media-font-size-text: 16px;
-  --media-font-size-finePrint: 14px;
-  --media-font-size-button: 16px;
-
-}
 
 
 /* Für kleine Bildschirme (maximale Breite: 576px) */
@@ -571,22 +583,55 @@ html, body {
         --font-size-button: var(--font-size-button);
     }
 
+    *,
+    *::before,
+    *::after {
+    box-sizing: border-box;
+    }
+
+
+
     html, body {
-      height: 100vh;
-      width: 100vw;
+      margin: 0; /* Hier Margin auf 0 setzen */
+      padding: 0; /* Optional, für Konsistenz */
+      overflow: hidden; /* Optional, falls Scrollen unerwünscht ist */
     }
 
 
     #toggle-container {
-        width: 365px;
-        height: 660px;
-        padding: 0;
+      width: 100%;
+      height: 100vh;
+      min-width: auto;
+      min-height: auto;
+      max-width: 100%;
+      max-height: 100vh;
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      overflow-y: auto;
+      border: 2px solid black; /* Schwarzer Rahmen */
+      box-sizing: border-box;
+      display: flex; /* Aktiviert Flexbox */
+      flex-direction: column; /* Elemente werden vertikal gestapelt */
+      border: 2px solid var(--secondary-border-color);
+      margin: 0;
+      padding: 0;
     }
 
 
-    #chatbot-container {
-        width: 100%;
-        height: 100%;
+ 
+  #title-container {
+      flex-shrink: 0; /* Höhe richtet sich nach dem Inhalt, schrumpft nicht */
+    }
+
+  #chatbot-consent-container {
+      flex-shrink: 0; /* Höhe richtet sich nach dem Inhalt, schrumpft nicht */
+    }
+ 
+  #chatbot-container {
+      flex-grow: 1;
+      overflow-y: auto;
     }
 
 
@@ -606,9 +651,7 @@ html, body {
         height: 25px;
     }
     
-    #chatbot-header {
-        height: 50px;
-    }
+    
     
 
     .modal-standard-inner {
@@ -625,7 +668,89 @@ html, body {
       font-size: var(--media-font-size-text);
     }
 
-}
+}   /* Ende der Media Queries */
+
+
+
+
+    #chatbot-header {
+
+      display: flex; /* Flexbox zur horizontalen Anordnung der Kind-Elemente */
+      align-items: center; /* Zentriert die Inhalte vertikal */
+      width: 100%; /* Nimmt die gesamte Breite des übergeordneten Elements ein */
+      box-sizing: border-box; /* Schließt Padding in die Gesamtbreite ein */
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+
+    #chatbot-language {
+      display: flex;
+      align-items: center; /* Zentriert Flagge und Sprache vertikal */
+      width: 130px;
+      max-width: 40%; /* Nimmt 40 % der Breite von `#chatbot-header` ein */
+      position: relative; /* Ermöglicht absolute Positionierung der Flagge */
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+
+    #selected-flag {
+      margin-right: 5px;/* Fügt einen Abstand zwischen Fahne und Dropdown ein */
+    }
+
+
+
+    /* Dropdown-Styling für #language-dropdown */
+    #language-dropdown {
+      width: 100%; /* Nimmt die volle Breite der jeweiligen Container ein */
+      padding: 5px; /* Optionales Padding für bessere Lesbarkeit */
+      box-sizing: border-box; /* Bezieht Padding in die Gesamtbreite ein */
+      font-family: var(--company-font-family);
+      font-size: var(--font-size-text);
+      color: var(--primary-font-color);
+      border: none;
+      background-color: var(--primary-background-color); /* Setzt die Hintergrundfarbe */
+      margin-left: 20px;
+    }
+
+
+    /* Themenbereich in der Mitte, ebenfalls 40 % der Breite */
+    #chatbot-themes {
+      display: flex;
+      align-items: center; /* Zentriert das Dropdown vertikal */
+      width: 100px; 
+      max-width: 40%; /* Nimmt 40 % der Breite von `#chatbot-header` ein */
+      justify-content: center; /* Zentriert das Dropdown horizontal */
+      margin-left: 10px;
+    }
+
+    /* Dropdown-Styling für #theme */
+    #theme {
+      width: 100%; /* Nimmt die volle Breite der jeweiligen Container ein */
+      padding: 5px; /* Optionales Padding für bessere Lesbarkeit */
+      box-sizing: border-box; /* Bezieht Padding in die Gesamtbreite ein */
+      font-family: var(--company-font-family);
+      font-size: var(--font-size-text);
+      color: var(--primary-font-color);
+      border: none;
+      background-color: var(--primary-background-color); /* Setzt die Hintergrundfarbe */
+    }
+
+    /* Rechtsseitiger Bereich für Icons, nimmt 20 % der Breite ein */
+    #chatbot-icons {
+      display: flex;
+      align-items: center; /* Zentriert die Icons vertikal */
+      justify-content: flex-end; /* Positioniert Icons rechts im Header */
+      flex-grow: 1;
+      width: 20%; /* Nimmt 20 % der Breite von `#chatbot-header` ein */
+    }
+
+    
+
+
+
+
 
 
 
@@ -665,7 +790,7 @@ body.modal-open {
 
 /* Stil für das Eingabefeld Aktennummer im Contact Form */
 #contact-form-aktennummer {
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   color: var(--primary-font-color);
   font-weight: normal;
@@ -705,7 +830,7 @@ body.modal-open {
 
 /* Stil für das Eingabefeld Name im Contact Form */
 #contact-form-name {
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   color: var(--primary-font-color);
   font-weight: normal;
@@ -745,7 +870,7 @@ body.modal-open {
 
 /* Stil für das Eingabefeld email im Contact Form */
 #contact-form-email {
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   color: var(--primary-font-color);
   font-weight: normal;
@@ -779,7 +904,7 @@ body.modal-open {
 
 /* Stil für das Eingabefeld Nachricht im Contact Form */
 #contact-form-nachricht {
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   color: var(--primary-font-color);
   font-weight: normal;
@@ -804,7 +929,7 @@ body.modal-open {
 
 /* Stil für das Eingabefeld Nachricht im Modaldialog*/
 #modalMessage {
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   color: var(--primary-font-color);
   font-weight: normal;
@@ -897,7 +1022,7 @@ body.modal-open {
 #instant-answer-dialog-button {
   display: block;
   width: 100%;
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   padding: 10px 20px;
   border: none;
@@ -919,7 +1044,7 @@ body.modal-open {
 #instant-answer-dialog-schliessen-button {
   display: none;
   width: 100%;
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   padding: 10px 20px;
   border: none;
@@ -940,7 +1065,7 @@ body.modal-open {
   display: none;
   z-index: 1000;
   width: 100%;
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   padding: 10px 20px;
   border: none;
@@ -962,7 +1087,7 @@ body.modal-open {
 /*#instant-answer-button {
   display: block;
   width: 100%;
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   padding: 10px 20px;
   border: none;
@@ -996,19 +1121,6 @@ body.modal-open {
 
 
 
-#chatbot-header {
-  height: 70px;
-  padding: 0px;
-  border-bottom: 1px solid #ddd;
-  box-sizing: border-box;
-}
-
-
-.chatbot-header-content {
-  flex: 2;
-  text-align: left;
-  padding: 0px 10px 0px 25px;
-}
 
 
 
@@ -1039,6 +1151,8 @@ body.modal-open {
 
 
 .title-content .custom0a-p {
+  font-family: var(--company-font-family);
+  font-weight: bold;
   color: var(--primary-font-color);
   font-size: var(--font-size-title);
   margin-top: 0;
@@ -1061,49 +1175,6 @@ body.modal-open {
 
 
 
-
-
-
-#chatbot-language-container {
-  display: flex;
-  align-items: center;
-  padding: 0px 10px 10px 0px;
-  flex-wrap: nowrap; /* Verhindert das Umfließen der Elemente */
-}
-
-
-#chatbot-language {
-  width: 100%;
-  text-align: left;
-  margin-top:20px;
-  margin-bottom:20px;
-}
-
-
-#language-selection {
-  position: relative;
-  display: inline-block;
-}
-
-
-
-#selected-flag {
-  flex-shrink: 0; /* Verhindert, dass die Fahne schrumpft */
-  margin-right: 10px; /* Fügt einen Abstand zwischen Fahne und Dropdown ein */
-}
-
-
-
-#language-dropdown {
-  flex-grow: 1; /* Das Dropdown nimmt den verbleibenden Platz ein */
-  width: 100%; /* Setzt die Breite auf 100% des verfügbaren Platzes */
-  font-family: inherit;
-  font-size: var(--font-size-text);
-  color: var(--primary-font-color);
-  border: none;
-  padding-left: 40px;
-  background-color: var(--primary-background-color); /* Setzt die Hintergrundfarbe */
-}
 
 
 
@@ -1205,6 +1276,7 @@ body.modal-open {
 
 
 #chatbot-consent label {
+  font-family: var(--company-font-family);
   font-size: var(--font-size-finePrint);
   margin-left: 10px;
 }
@@ -1233,6 +1305,7 @@ body.modal-open {
 
 
 .suggested-title {
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   font-weight: bold;
   padding: 0px 0px 10px 0px;
@@ -1256,6 +1329,7 @@ body.modal-open {
 .suggested-question-item {
     display: none;
     /*font-size: var(--font-size-text);
+    font-family: var(--company-font-family);
     background-color: var(--secondary-background-color); 
     border: 1px solid var(--primary-border-color);
     padding: 8px 15px;
@@ -1281,53 +1355,13 @@ body.modal-open {
 
 
 
-#chatbot-themes {
-  width: 100%;
-  text-align: left;
-  margin-top:20px;
-  margin-bottom:20px;
-}
-
-
-#theme-selection {
-  position: relative;
-  display: inline-block;
-}
-
-
-#theme {
-  /* flex-grow: 1; Das Dropdown nimmt den verbleibenden Platz ein */
-  /* width: 100%; Setzt die Breite auf 100% des verfügbaren Platzes */
-  font-family: inherit;
-  font-size: var(--font-size-text);
-  color: var(--primary-font-color);
-  border: none;
-  padding-left: 0px;
-  background-color: var(--primary-background-color); /* Setzt die Hintergrundfarbe */
-
-}
-
-
-  
-
-
-
-
-#chatbot-icons {
-  width: 100%;
-  margin-top:20px;
-  margin-bottom:20px;
-  display: flex;
-  justify-content: flex-end; /* Elemente nach rechts ausrichten */
-}
-
-
 
 
 
 /* Stilierung des Bereichs für die eingefügten Fragen und Antworten im Chatbot */
 #chatbot-messages-gpt div {
   border-radius: var(--primary-border-radius);
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text); /* Schriftgröße für Nachrichten */
   text-align: left;
 }
@@ -1339,6 +1373,7 @@ body.modal-open {
   padding: 10px 20px 15px 35px;
   background-color: var(--primary-background-color);
   color: var(--secondary-font-color);
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   font-weight: bold;
   text-align: left;
@@ -1350,6 +1385,7 @@ body.modal-open {
 
 /* Stil für die Nachrichten des Bots */
 #chatbot-messages-gpt .bot-message {
+  font-family: var(--company-font-family);
   padding: 5px 20px 15px 35px;
   background-color: var(--primary-background-color);
   text-align: left;
@@ -1366,6 +1402,7 @@ body.modal-open {
 /* Special Links */
 .special-link-consent {
   color: var(--primary-link-color) !important;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   text-decoration: underline; /* Optional, wenn du möchtest, dass Links unterstrichen sind */
 }
@@ -1377,6 +1414,7 @@ body.modal-open {
 
 /* Stil für den Consent-Text */
 #chatbot-consent-label {
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
 }
 
@@ -1415,6 +1453,7 @@ body.modal-open {
 /* Überschriften im Chatbot */
 .special-heading {
   color: var(--primary-company-color);
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   font-weight: bold;
   margin: 0;
@@ -1424,6 +1463,7 @@ body.modal-open {
 
 .special-heading-in-standard-color {
   color: var(--website-standard-font-color-dark);
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   font-weight: bold;
   margin: 0;
@@ -1493,7 +1533,7 @@ body.modal-open {
 /* Stil für das Eingabefeld im Chatbot */
 #chatbot-input {
   flex-grow: 1;
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   color: var(--primary-font-color);
   font-weight: normal;
@@ -1520,6 +1560,7 @@ body.modal-open {
 /* Stil für den Platzhaltertext im Eingabefeld */
 #chatbot-input::placeholder {
   color: var(--secondary-font-color);
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   font-style: italic;
   padding-left: 0px;
@@ -1570,7 +1611,7 @@ body.modal-open {
   width: 100%;
   height: calc(100% - 40px);
   padding: 10px;
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   color: var(--primary-font-color);
   border: none;
@@ -1585,7 +1626,7 @@ body.modal-open {
 
 /* Mikrofon Button */
 #micButton {
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   padding: 10px 20px;
   border: none;
@@ -1612,7 +1653,7 @@ body.modal-open {
 
 /* OK Button */
 #modal-ok-button {
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   padding: 10px 20px;
   border: none;
@@ -1670,7 +1711,7 @@ body.modal-open {
 /* Senden Button im Eingabebereich */
 #chatbot-send-button {
   width: 100%;
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   padding: 10px 25px;
   border: none;
@@ -1692,7 +1733,7 @@ body.modal-open {
 
 /* Leeren Button im Eingabebereich */
 #chatbot-clear-button {
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   margin-left: 10px;
   padding: 10px 20px;
@@ -1714,7 +1755,7 @@ body.modal-open {
 .okAndnotOK-Button {
   z-index: 1000;
   width: 100%;
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   margin-top: 15px;
   padding: 10px 20px;
@@ -1736,7 +1777,7 @@ body.modal-open {
 
 /* Hilfe anzeigen Button */
 #chatbot-Help-button {
-  font-family: inherit;
+  font-family: var(--company-font-family);
   font-size: var(--font-size-button);
   padding: 10px 20px;
   border: none;
@@ -1761,7 +1802,7 @@ body.modal-open {
   left: 50%;
   transform: translate(-50%, -50%);
   flex-direction: column;
-  width: auto;
+  max-width: 80%;
   position: absolute;
   margin: 0 auto;
   justify-content: center; /* Horizontale Zentrierung */
@@ -1788,6 +1829,7 @@ body.modal-open {
 
 
 #loader-text {
+  font-family: var(--company-font-family);
   font-size: var(--primary-font-size);
   color: #fff;
   background-color: var(--primary-company-color);
@@ -1798,7 +1840,7 @@ body.modal-open {
   text-align: center; /* Text zentrieren */
   max-width: 100%; /* Maximal 90% der Bildschirmbreite */
   margin-top: 15px;
-  white-space: nowrap; /* Verhindert das Umbrechen des Textes */
+  /* white-space: nowrap; Verhindert das Umbrechen des Textes */
   
   }
 
@@ -1917,7 +1959,7 @@ body.modal-open {
 
 
 .hmd-button {
-    font-family: inherit;
+    font-family: var(--company-font-family);  
     font-size: var(--font-size-button);
     padding: 10px 20px;
     border: none;
@@ -1984,7 +2026,7 @@ body.modal-open {
 }
 
 .ccm-button {
-    font-family: inherit;
+    font-family: var(--company-font-family);
     font-size: var(--font-size-button);
     padding: 10px 20px;
     border: none;
@@ -2240,7 +2282,7 @@ body.modal-open {
 
 
 .modal-standard-button {
-    font-family: inherit;
+    font-family: var(--company-font-family);
     font-size: var(--font-size-button);
     padding: 10px 20px;
     border: none;
@@ -2262,7 +2304,7 @@ body.modal-open {
 input:-webkit-autofill,
 textarea:-webkit-autofill {
   background-color: var(--primary-background-color) !important;
-  color: inherit !important;
+  color: var(--primary-background-color) !important;
 }
 
 
@@ -2304,7 +2346,7 @@ textarea:-webkit-autofill {
 
     <div class="title-content">
 
-        <p class="custom0a-p">Hallo, ich bin Clara,</p>
+        <p class="custom0a-p">Hallo, ich bin Chati,</p>
         <p class="custom0b-p">wenn Sie Fragen zum Thema Forderungsmanagement oder zum Unternehmen "cream collection Stephan Vila" (kurz "creamco") haben, dann sind Sie hier genau richtig. Ich weiß aber noch viel mehr. Versuchen Sie es einfach.</p>
         <p class="custom0c-p">wie kann ich Ihnen helfen?</p>
 
@@ -2816,81 +2858,59 @@ textarea:-webkit-autofill {
 
         <div id="chatbot-header">
 
-            <div class="chatbot-header-content">
-          
-                <div id="chatbot-language-container">
+          <div id="chatbot-language">
 
-                    <div id="chatbot-language">
+            <span id="selected-flag" class="flag-icon flag-icon-de" style="position:absolute;left:0px;top:50%;transform:translateY(-50%)"></span>
+            <select id="language-dropdown" onchange="updateFlagAndSendMessage()">
+              <option value="Deutsch" data-flag="flag-icon-de">Deutsch...</option>
+              <option value="Englisch" data-flag="flag-icon-gb">English</option>
+              <option value="Spanisch" data-flag="flag-icon-es">Español</option>
+              <option value="Türkisch" data-flag="flag-icon-tr">Türkçe</option>
+              <option value="Arabisch" data-flag="flag-icon-sa">العربية</option>
+              <option value="Russisch" data-flag="flag-icon-ru">Русский</option>
+              <option value="Polnisch" data-flag="flag-icon-pl">Polski</option>
+              <option value="Rumänisch" data-flag="flag-icon-ro">Română</option>
+              <option value="Griechisch" data-flag="flag-icon-gr">Ελληνικά</option>
+              <option value="Italienisch" data-flag="flag-icon-it">Italiano</option>
+            </select>
+                        
+          </div>
 
-                        <div id="language-selection">
-                            <span id="selected-flag" class="flag-icon flag-icon-de" style="position:absolute;left:0px;top:50%;transform:translateY(-50%)"></span>
-                            <select id="language-dropdown" onchange="updateFlagAndSendMessage()">
-                                <option value="Deutsch" data-flag="flag-icon-de">Deutsch...</option>
-                                <option value="Englisch" data-flag="flag-icon-gb">English</option>
-                                <option value="Spanisch" data-flag="flag-icon-es">Español</option>
-                                <option value="Türkisch" data-flag="flag-icon-tr">Türkçe</option>
-                                <option value="Arabisch" data-flag="flag-icon-sa">العربية</option>
-                                <option value="Russisch" data-flag="flag-icon-ru">Русский</option>
-                                <option value="Polnisch" data-flag="flag-icon-pl">Polski</option>
-                                <option value="Rumänisch" data-flag="flag-icon-ro">Română</option>
-                                <option value="Griechisch" data-flag="flag-icon-gr">Ελληνικά</option>
-                                <option value="Italienisch" data-flag="flag-icon-it">Italiano</option>
-                            </select>
-                        </div>
-                    </div>
+          <div id="chatbot-themes">
 
+            <select id="theme" onchange="handleThemeChange()">
+              <option value disabled selected>Themen:</option>
+              <option value="Wer oder was ist cream collection?">Über cream collection</option>
+              <option value="Wer ist Stephan Vila und was weißt du über ihn?">Über Stephan Vila</option>
+              <option value="Welche Leistungen bietet cream collection an?">Leistungen</option>
+              <option value="Wie lauten die Kontaktdaten von cream collection?">Kontakt</option>
+              <option value="Was genau ist Forderungsmanagement?">Forderungsmanagement Definition</option>
+              <option value="Welche Bedeutung hat das Forderungsmanagement für Unternehmen und Organisationen?">Forderungsmanagement Bedeutung</option>
+            </select>
 
+          </div>
 
-        
-                    <div id="chatbot-themes">
+          <div id="chatbot-icons">
 
-                       <div id="theme-selection">
-                           <select id="theme" onchange="handleThemeChange()">
-                               <option value disabled selected>Beliebte Themen:</option>
-                               <option value="Wer oder was ist cream collection?">Über cream collection</option>
-                               <option value="Wer ist Stephan Vila und was weißt du über ihn?">Über Stephan Vila</option>
-                               <option value="Welche Leistungen bietet cream collection an?">Leistungen</option>
-                               <option value="Wie lauten die Kontaktdaten von cream collection?">Kontakt</option>
-                               <option value="Was genau ist Forderungsmanagement?">Forderungsmanagement Definition</option>
-                               <option value="Welche Bedeutung hat das Forderungsmanagement für Unternehmen und Organisationen?">Forderungsmanagement Bedeutung</option>
-                           </select>
+            <svg class="icon3 hover-scale" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" title="Hilfe" onclick="showHelpModal()">  
+            <title>Hilfe</title>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z">
+            </path>
+            </svg>
 
-                       </div>
+            <svg class="icon2 hover-scale" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" title="Chat-Historie löschen" onclick="openDeleteConfirmation()"> 
+            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0">
+            <title>Chat-Historie löschen</title>
+            </path>
+            </svg>
 
-                    </div>
-
-
-
-                    <div id="chatbot-icons">
-
-                    <svg class="icon3 hover-scale" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" title="Hilfe" onclick="showHelpModal()">  
-                    <title>Hilfe</title>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z">
-                    </path>
-                    </svg>
-
-
-
-                    <svg class="icon2 hover-scale" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" title="Chat-Historie löschen" onclick="openDeleteConfirmation()"> 
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0">
-                    <title>Chat-Historie löschen</title>
-                    </path>
-                    </svg>
-
-
-
-                    <svg class="icon4 hover-scale" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" title="Chat-Historie löschen und Chatbot schließen" onclick="openDeleteConfirmation2()">  
-                    <title>Chat-Historie löschen und Chatbot schließen</title>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z">
-                    </path>
-                    </svg>
+            <svg class="icon4 hover-scale" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" title="Chat-Historie löschen und Chatbot schließen" onclick="openDeleteConfirmation2()">  
+            <title>Chat-Historie löschen und Chatbot schließen</title>
+            <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z">
+            </path>
+            </svg>
                     
-                    </div>
-
-
-                </div>
-
-            </div>
+          </div>
 
         </div>
 
@@ -2925,7 +2945,7 @@ textarea:-webkit-autofill {
             <div id="chatbot-input-inner-container">
 
                 <div id="input-left"> 
-                <textarea id="chatbot-input" placeholder="Sie haben weitere Fragen? Wie kann ich Ihnen helfen?" maxlength="2000"></textarea>
+                <textarea id="chatbot-input" placeholder="Wie kann ich Ihnen helfen?" maxlength="2000"></textarea>
                 </div>
                 <div id="input-right"> 
 
@@ -3119,7 +3139,7 @@ const textTranslations = {
         "notOK": "Nachricht senden",
         "resetPageText1": "Wir freuen uns, dass wir Ihnen mit diesem Service helfen konnten.",
         "resetPageText2": "Ihre Chat-Historie wird gelöscht und die Nachricht verworfen.",
-        "inputPlaceholder": "Sie haben weitere Fragen? Wie kann ich Ihnen helfen?",
+        "inputPlaceholder": "Wie kann ich Ihnen helfen?",
         "loader-text": "Einen kurzen Augenblick bitte. Ihre Anfrage wird bearbeitet.",
         "chatHistoryDeleted": "Ihre Chat-Historie wird gelöscht.",
         "chatHistoryDeletedAndClosed": "Ihre Chat-Historie wird gelöscht und der Chatbot geschlossen.",
@@ -3167,7 +3187,7 @@ const textTranslations = {
         "notOK": "Send message",
         "resetPageText1": "We are glad that we could assist you with this service.",
         "resetPageText2": "Your chat history will be deleted and the message discarded.",
-        "inputPlaceholder": "Do you have more questions? How can I help you?",
+        "inputPlaceholder": "How can I help you?",
         "loader-text": "Please wait a moment. Your request is being processed.",
         "chatHistoryDeleted": "Your chat history will be deleted.",
         "chatHistoryDeletedAndClosed": "Your chat history will be deleted and the chatbot will be closed.",
@@ -3215,7 +3235,7 @@ const textTranslations = {
         "notOK": "Enviar mensaje",
         "resetPageText1": "Nos alegra haber podido ayudarle con este servicio.",
         "resetPageText2": "Su historial de chat será eliminado y el mensaje descartado.",
-        "inputPlaceholder": "¿Tienes más preguntas? ¿Cómo puedo ayudarte?",
+        "inputPlaceholder": "¿Cómo puedo ayudarte?",
         "loader-text": "Por favor, espera un momento. Estamos procesando tu solicitud.",
         "chatHistoryDeleted": "Su historial de chat será eliminado.",
         "chatHistoryDeletedAndClosed": "Su historial de chat será eliminado y el chatbot se cerrará.",
@@ -3263,7 +3283,7 @@ const textTranslations = {
     "notOK": "Mesaj gönder",
     "resetPageText1": "Bu hizmetle size yardımcı olabildiğimiz için mutluyuz.",
     "resetPageText2": "Sohbet geçmişiniz silinecek ve mesaj iptal edilecektir.",
-    "inputPlaceholder": "Başka sorularınız var mı? Size nasıl yardımcı olabilirim?",
+    "inputPlaceholder": "Size nasıl yardımcı olabilirim?",
     "loader-text": "Lütfen bir an bekleyin. Talebiniz işleniyor.",
     "chatHistoryDeleted": "Sohbet geçmişiniz silinecek.",
     "chatHistoryDeletedAndClosed": "Sohbet geçmişiniz silinecek ve chatbot kapatılacak.",
@@ -3310,7 +3330,7 @@ const textTranslations = {
     "notOK": "إرسال الرسالة",
     "resetPageText1": "نحن سعداء لأننا تمكنا من مساعدتك بهذه الخدمة.",
     "resetPageText2": "سيتم حذف سجل المحادثة الخاص بك وسيتم تجاهل الرسالة.",    
-    "inputPlaceholder": "هل لديك المزيد من الأسئلة؟ كيف يمكنني مساعدتك؟",
+    "inputPlaceholder": "كيف يمكنني مساعدتكم؟",
     "loader-text": "يرجى الانتظار لحظة. يتم معالجة طلبك.",
     "chatHistoryDeleted": "سيتم حذف سجل المحادثة الخاص بك.",
     "chatHistoryDeletedAndClosed": "سيتم حذف سجل المحادثة الخاص بك وسيتم إغلاق الروبوت.",
@@ -3358,7 +3378,7 @@ const textTranslations = {
     "notOK": "Отправить сообщение",
     "resetPageText1": "Мы рады, что смогли помочь вам с этой услугой.",
     "resetPageText2": "История чата будет удалена, а сообщение отменено.",
-    "inputPlaceholder": "У вас есть еще вопросы? Чем я могу вам помочь?",
+    "inputPlaceholder": "Чем я могу вам помочь?",
     "loader-text": "Пожалуйста, подождите немного. Ваш запрос обрабатывается.",
     "chatHistoryDeleted": "История вашего чата будет удалена.",
     "chatHistoryDeletedAndClosed": "История вашего чата будет удалена, и чат-бот будет закрыт.",
@@ -3407,7 +3427,7 @@ const textTranslations = {
     "notOK": "Wyślij wiadomość",
     "resetPageText1": "Cieszymy się, że mogliśmy pomóc Ci w tej usłudze.",
     "resetPageText2": "Historia czatu zostanie usunięta, a wiadomość odrzucona.",
-    "inputPlaceholder": "Masz więcej pytań? Jak mogę ci pomóc?",
+    "inputPlaceholder": "Jak mogę ci pomóc?",
     "loader-text": "Proszę czekać chwilę. Twoje zapytanie jest przetwarzane.",
     "chatHistoryDeleted": "Twoja historia czatu zostanie usunięta.",
     "chatHistoryDeletedAndClosed": "Twoja historia czatu zostanie usunięta, a chatbot zostanie zamknięty.",
@@ -3456,7 +3476,7 @@ const textTranslations = {
     "notOK": "Trimite mesaj",
     "resetPageText1": "Ne bucurăm că v-am putut ajuta cu acest serviciu.",
     "resetPageText2": "Istoricul dvs. de chat va fi șters și mesajul va fi anulat.",
-    "inputPlaceholder": "Aveți alte întrebări? Cum vă pot ajuta?",
+    "inputPlaceholder": "Cum vă pot ajuta?",
     "loader-text": "Vă rugăm să așteptați un moment. Solicitarea dvs. este în curs de procesare.",
     "chatHistoryDeleted": "Istoricul conversațiilor dvs. va fi șters.",
     "chatHistoryDeletedAndClosed": "Istoricul conversațiilor dvs. va fi șters, iar chatbot-ul va fi închis.",
@@ -3504,7 +3524,7 @@ const textTranslations = {
     "notOK": "Αποστολή μηνύματος",
     "resetPageText1": "Χαιρόμαστε που μπορέσαμε να σας βοηθήσουμε με αυτή την υπηρεσία.",
     "resetPageText2": "Το ιστορικό συνομιλιών σας θα διαγραφεί και το μήνυμα θα απορριφθεί.",
-    "inputPlaceholder": "Έχετε περισσότερες ερωτήσεις; Πώς μπορώ να σας βοηθήσω;",
+    "inputPlaceholder": "Πώς μπορώ να σας βοηθήσω;",
     "loader-text": "Παρακαλώ περιμένετε λίγο. Το αίτημά σας επεξεργάζεται.",
     "chatHistoryDeleted": "Το ιστορικό συνομιλιών σας θα διαγραφεί.",
     "chatHistoryDeletedAndClosed": "Το ιστορικό συνομιλιών σας θα διαγραφεί και το chatbot θα κλείσει.",
@@ -3551,7 +3571,7 @@ const textTranslations = {
     "notOK": "Invia messaggio",
     "resetPageText1": "Siamo felici di aver potuto aiutarvi con questo servizio.",
     "resetPageText2": "La cronologia della chat verrà cancellata e il messaggio verrà eliminato.",
-    "inputPlaceholder": "Hai altre domande? Come posso aiutarti?",
+    "inputPlaceholder": "Come posso aiutarti?",
     "loader-text": "Attendere un momento. La tua richiesta è in fase di elaborazione.",
     "chatHistoryDeleted": "La cronologia della chat verrà eliminata.",
     "chatHistoryDeletedAndClosed": "La cronologia della chat verrà eliminata e il chatbot verrà chiuso.",
@@ -3843,6 +3863,11 @@ async function sendMessage() {
     // Kontext und Kunde aus den CSS-Variablen holen
     const rulesContext = getComputedStyle(document.documentElement).getPropertyValue('--rules-context').trim();
     const rulesCustomer = getComputedStyle(document.documentElement).getPropertyValue('--rules-customer').trim();
+
+
+    // Protokollieren der Werte
+    console.log(`Übergebener Kontext: ${rulesContext}`);
+    console.log(`Übergebener Kunde: ${rulesCustomer}`);
 
 
     try {
@@ -5045,6 +5070,9 @@ const companyMainUrl = getComputedStyle(document.documentElement)
 
 // Füge die URL zum Link hinzu
 document.getElementById('company-main-url').href = companyMainUrl;
+
+
+
 
 
 
