@@ -148,6 +148,9 @@ html, body {
     align-items: center;
     padding-left: 20px;
     box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1000;	
 }
 
 #separate-header {
@@ -159,7 +162,7 @@ html, body {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 1000;So, erste FRra
+    z-index: 1000;
 }
 
 
@@ -177,23 +180,16 @@ html, body {
     width: auto;
     height: auto;
     max-width: 90vh;
-    max-height: 90vh;
+    max-height: 80vh;
     display: block; 
-    position: absolute;
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%); 
     background-color: var(--primary-background-color);
     border: 2px solid var(--secondary-border-color);
     border-radius: var(--primary-border-radius);
-    cursor: move; 
     overflow: hidden; 
     box-sizing: border-box; 
     padding: 10px; 
-    margin: 0; 
-    z-index: 100000;
-    flex-direction: column;
-    align-items: stretch;
+    margin: 160px auto; 
+    z-index: 1;    
 }
 
 
