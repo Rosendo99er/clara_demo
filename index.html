@@ -37,7 +37,7 @@
   --company-font-size-title: 27px;
   --company-font-size-subtitle: 18px;
   --company-font-size-text: 18px;
-  --company-font-size-finePrint: 18px;
+  --company-font-size-fineprint: 18px;
   --company-font-size-button: 18px;
   --form-and-field-company-color: #ddd;
   --primary-background-company-color: #fff;
@@ -110,13 +110,13 @@
   --font-size-title: var(--company-font-size-title);
   --font-size-subtitle: var(--company-font-size-subtitle);
   --font-size-text: var(--company-font-size-text);
-  --font-size-finePrint: var(--company-font-size-finePrint);
+  --font-size-fineprint: var(--company-font-size-fineprint);
   --font-size-button: var(--company-font-size-button);
 
   --media-font-size-title: 18px;
   --media-font-size-subtitle: 16px;
   --media-font-size-text: 16px;
-  --media-font-size-finePrint: 14px;
+  --media-font-size-fineprint: 10px;
   --media-font-size-button: 16px;
 
 }
@@ -313,10 +313,7 @@ html, body {
   font-weight: bold;
   color: var(--primary-font-color);
   font-size: var(--media-font-size-title);
-  margin-top: 0;
-  margin-bottom: 10px;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin: 0 !important;
   text-align: center;
   justify-content: center;
 }
@@ -631,7 +628,7 @@ footer {
         --font-size-title: var(--media-font-size-title);
         --font-size-subtitle: var(--media-font-size-subtitle);
         --font-size-text: var(--media-font-size-text);
-        --font-size-finePrint: var(--media-fsize-finePrint);
+        --font-size-fineprint: var(--media-font-size-fineprint);
         --font-size-button: var(--font-size-button);
     }
 
@@ -700,11 +697,11 @@ footer {
     }
 
     #chatbot-consent-label {
-      font-size: var(--media-font-size-text);
+      font-size: var(--media-font-size-fineprint) !important;
     }
 
     .special-link-consent {
-      font-size: var(--media-font-size-text);
+      font-size: var(--media-font-size-fineprint) !important;
     }
 
 }   /* Ende der Media Queries */
@@ -4356,16 +4353,7 @@ document.getElementById('chatbot-consent-checkbox').addEventListener('change', f
     document.getElementById('chatbot-send-button').disabled = !isChecked;
     document.getElementById('chatbot-clear-button').disabled = !isChecked;
 
-    // Nur für Bildschirme mit einer Breite von maximal 850px
-    if (window.innerWidth <= 850) {
-        // Setze den consentContainer auf 'none', wenn die Checkbox aktiviert ist
-        consentContainer.style.display = isChecked ? 'none' : 'block';
-    }
-
-
-
-
-    // SVG-Icons je nach Status der Checkbox aktivieren oder deaktivieren
+      // SVG-Icons je nach Status der Checkbox aktivieren oder deaktivieren
     const icons = document.querySelectorAll('.icon.hover-scale');
     icons.forEach(icon => {
         if (isChecked) {
