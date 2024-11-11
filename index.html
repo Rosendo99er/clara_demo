@@ -4170,6 +4170,9 @@ async function sendMessage() {
     // Scrollt die Seite sanft nach oben
        window.scrollTo({ top: 0, behavior: 'smooth' });
 
+    const inputField = document.getElementById('chatbot-input');
+    inputField.blur(); // Entfernt den Fokus und schließt die Tastatur auf Mobilgeräten
+
 
     // Kontext und Kunde aus den CSS-Variablen holen
     const rulesContext = getComputedStyle(document.documentElement).getPropertyValue('--rules-context').trim();
