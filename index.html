@@ -4576,6 +4576,9 @@ function sendLanguageMessage() {
       const inputElement = document.getElementById('chatbot-input');
       inputElement.value = message;
       sendMessage(); // Sende die vorgefertigte Nachricht
+   
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
     }
 
 
