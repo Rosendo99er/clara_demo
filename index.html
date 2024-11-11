@@ -785,7 +785,8 @@ footer {
 
 #chatbot-messages {
   flex-grow: 1;
-  overflow-y: auto; /* Ermöglicht Scrollen, wenn Nachrichten den Bereich überlaufen */
+  overflow-y: auto;
+  overflow-x: hidden; 
   border-bottom: 0px solid var(--primary-border-color); /* aktuell ausgeblendet */
   box-sizing: border-box;
   padding: 20px !important;
@@ -798,6 +799,7 @@ footer {
   border-radius: var(--primary-border-radius);
   font-family: var(--company-font-family);
   font-size: var(--media-font-size-text) !important;
+  overflow-x: hidden; 
 }
 
 
