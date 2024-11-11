@@ -113,10 +113,10 @@
   --font-size-fineprint: var(--company-font-size-fineprint);
   --font-size-button: var(--company-font-size-button);
 
-  --media-font-size-title: 18px;
-  --media-font-size-subtitle: 16px;
+  --media-font-size-title: 21px;
+  --media-font-size-subtitle: 18px;
   --media-font-size-text: 16px;
-  --media-font-size-fineprint: 10px;
+  --media-font-size-fineprint: 12px;
   --media-font-size-button: 16px;
 
 }
@@ -265,8 +265,8 @@ html, body {
   #toggle-container {
     display: block;
     width: 100%;
-    height: 85vh%;
-    min-height: 85vh;
+    height: 90vh%;
+    min-height: 90vh;
     max-width: none;
     max-height: 100%;
     background-color: var(--primary-background-color);
@@ -312,7 +312,7 @@ html, body {
   font-family: var(--company-font-family);
   font-weight: bold;
   color: var(--primary-font-color);
-  font-size: var(--media-font-size-title);
+  font-size: var(--media-font-size-title) !important;
   margin: 0 !important;
   text-align: center;
   justify-content: center;
@@ -759,6 +759,89 @@ footer {
     .special-link-consent {
       font-size: var(--media-font-size-fineprint) !important;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+#chatbot-messages-gpt div {
+  border-radius: var(--primary-border-radius);
+  font-family: var(--company-font-family);
+  font-size: var(--media-font-size-text) !important;
+  text-align: left;
+}
+
+
+
+#chatbot-messages-gpt .user-message {
+  padding: 0px 20px 0px 10px !important;
+  background-color: var(--primary-background-color);
+  color: var(--secondary-font-color);
+  font-family: var(--company-font-family);
+  font-size: var(--media-font-size-text) !important;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 15px !important;
+}
+
+
+
+
+#chatbot-messages-gpt .bot-message {
+  font-family: var(--company-font-family);
+  padding: 0px 20px 0px 10px !important;
+  background-color: var(--primary-background-color);
+  text-align: left;
+  color: var(--website-standard-font-color-dark);
+  margin-top: 10px !important; 
+  }
+
+
+
+/* Special Links */
+.special-link {
+  color: var(--primary-link-color) !important;
+  text-decoration: underline; /* Optional, wenn du möchtest, dass Links unterstrichen sind */
+}
+
+
+
+.special-link:visited {
+  color: var(--secondary-link-color) !important; /* Falls du eine spezifische Farbe für besuchte Links möchtest */
+}
+
+
+.special-heading {
+  color: var(--primary-company-color);
+  font-family: var(--company-font-family);
+  font-size: var(--media-font-size-text) !important;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+
+.special-heading-in-standard-color {
+  color: var(--website-standard-font-color-dark);
+  font-family: var(--company-font-family);
+  font-size: var(--media-font-size-text) !important;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
 
 }   /* Ende der Media Queries */
 
