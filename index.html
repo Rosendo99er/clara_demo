@@ -4356,6 +4356,15 @@ document.getElementById('chatbot-consent-checkbox').addEventListener('change', f
     document.getElementById('chatbot-send-button').disabled = !isChecked;
     document.getElementById('chatbot-clear-button').disabled = !isChecked;
 
+    // Nur für Bildschirme mit einer Breite von maximal 850px
+    if (window.innerWidth <= 850) {
+        // Setze den consentContainer auf 'none', wenn die Checkbox aktiviert ist
+        consentContainer.style.display = isChecked ? 'none' : 'block';
+    }
+
+
+
+
     // SVG-Icons je nach Status der Checkbox aktivieren oder deaktivieren
     const icons = document.querySelectorAll('.icon.hover-scale');
     icons.forEach(icon => {
