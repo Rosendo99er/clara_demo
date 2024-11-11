@@ -5,7 +5,7 @@
 <title>Chatbot</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
 
-<!-- Der Abruf von Google-Fonts darf nur im Kontext "Clara free" aktiviert sein!!! -->
+<!-- Der Abruf von Google-Fonts darf nur im Kontext "Clara free" aktiviert sein! -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&amp;display=swap" rel="stylesheet" />
@@ -335,9 +335,6 @@ html, body {
 }
 
 
-#chatbot-consent-container.hidden {
-  display: none;
-}
 
 
 }
@@ -1235,6 +1232,7 @@ body.modal-open {
 
 /* Äußerer Container für den Bereich Consent */
 #chatbot-consent-container {
+  display: block;
   padding: 10px 10px 10px 0px;
   border-bottom: 0px solid var(--primary-border-color);
 }
@@ -5104,10 +5102,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const consentContainer = document.getElementById('chatbot-consent-container');
 
     consentCheckbox.addEventListener('change', function() {
-        if (this.checked) {
-            consentContainer.classList.add('hidden'); // Fügt die Klasse hinzu, die den Container ausblendet
-        } else {
-            consentContainer.classList.remove('hidden'); // Entfernt die Klasse, falls das Häkchen entfernt wird
+        // Überprüft, ob die Bildschirmbreite kleiner oder gleich 850px ist
+        if (window.innerWidth <= 850) {
+            if (this.checked) {
+                consentContainer.style.display = 'none';  // Blendet den Container aus
+            } else {
+                consentContainer.style.display = 'block'; // Zeigt den Container wieder an
+            }
         }
     });
 });
