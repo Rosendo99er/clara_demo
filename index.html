@@ -688,11 +688,11 @@ footer {
 @media screen and (max-width: 850px) {
 
     :root {
-        --font-size-title: var(--media-font-size-title);
-        --font-size-subtitle: var(--media-font-size-subtitle);
-        --font-size-text: var(--media-font-size-text);
-        --font-size-fineprint: var(--media-font-size-fineprint);
-        --font-size-button: var(--font-size-button);
+        --font-size-title: var(--media-font-size-title) !important;
+        --font-size-subtitle: var(--media-font-size-subtitle) !important;
+        --font-size-text: var(--media-font-size-text) !important;
+        --font-size-fineprint: var(--media-font-size-fineprint) !important;
+        --font-size-button: var(--font-size-button) !important;
     }
 
     *,
@@ -798,13 +798,13 @@ footer {
 /* Special Links */
 .special-link {
   color: var(--primary-link-color) !important;
-  text-decoration: underline; /* Optional, wenn du möchtest, dass Links unterstrichen sind */
+  text-decoration: underline; 
 }
 
 
 
 .special-link:visited {
-  color: var(--secondary-link-color) !important; /* Falls du eine spezifische Farbe für besuchte Links möchtest */
+  color: var(--secondary-link-color) !important;
 }
 
 
@@ -844,6 +844,10 @@ footer {
 }
 
 
+
+
+
+
 /* Stile für den help-modal-dialog (hmd) */
 .hmd-dialog {
   z-index: 10000000 !important;
@@ -867,6 +871,94 @@ footer {
 
 
 
+.hmd-content {
+    flex: 1; /* Nimmt den verfügbaren Platz ein */
+    overflow-y: auto; /* Vertikales Scrollen erlauben */
+    max-height: calc(100% - 80px); /* Höchstens so hoch wie der Dialog minus Platz für Buttons */
+    width: 100%;
+    max-width: none; /* Breite begrenzen */
+    box-sizing: border-box; /* Berücksichtigt Padding in der Breite */
+    margin-top: 0px !important;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.hmd-content .custom-h2 {
+    padding: 20px 0px 10px 0px !important;
+    border-radius: var(--primary-border-radius);
+    text-align: left;
+    font-size: var(--font-size-title) !important;
+    color: var(--primary-font-color);
+}
+
+.hmd-content .custom-h3 {
+    padding: 20px 0px 0px 0px;
+    border-radius: var(--primary-border-radius);
+    text-align: left;
+    font-size: var(--font-size-subtitle) !important;
+    font-weight: bold;
+    color: var(--secondary-font-color);
+}
+
+
+
+.hmd-content p {
+    font-size: var(--font-size-text);
+    color: var(--website-standard-font-color-dark);
+    padding: 0px;
+    margin: 0px;
+
+
+}
+
+
+.hmd-content-ul {
+    margin-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+.hmd-content li {
+    font-size: var(--font-size-text) !important;
+    color: var(--website-standard-font-color-dark);
+    margin-bottom: 10px;
+    line-height: 1.2 !important;
+    list-style-type: disc;
+    padding-left: 0px;
+
+}
+
+
+
+.hmd-button-container {
+    display: flex;
+    justify-content: center; /* Zentriert die Buttons im Dialog */
+    gap: 10px; /* Abstand zwischen den Buttons */
+    margin-top: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-top: 1px solid var(--tertiary-border-color);
+}
+
+
+
+.hmd-button {
+    font-family: var(--company-font-family);  
+    font-size: var(--font-size-button);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--primary-border-radius);
+    background-color: var(--primary-button-color);
+    color: var(--tertiary-font-color);
+    cursor: pointer;
+    min-width: 150px; /* Verhindert Umbruch und sorgt für gleichmäßige Breite */
+    text-align: center; /* Text zentriert im Button */
+}
+
+.hmd-button:hover {
+    background-color: var(--secondary-button-color);
+}
 
 
 
