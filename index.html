@@ -777,7 +777,7 @@ footer {
   font-family: var(--company-font-family);
   font-size: var(--media-font-size-text) !important;
   font-weight: bold;
-  text-align: left;
+  text-align: right !important;
   margin-top: 15px !important;
 }
 
@@ -826,6 +826,45 @@ footer {
   margin: 0;
   padding: 0;
 }
+
+
+.send-confirmation {
+  position: fixed;
+  z-index: 9999999 !important;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Flexbox für Zentrierung */
+  justify-content: center;
+  align-items: center;
+  background-color: var(--modal-background);
+  box-sizing: border-box;
+  pointer-events: auto; /* Interaktionen sind erlaubt */
+}
+
+
+/* Stile für den help-modal-dialog (hmd) */
+.hmd-dialog {
+  z-index: 10000000 !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90% !important;
+  height: 90% !important;
+  background-color: var(--primary-background-color);
+  display: flex; /* Flexbox aktivieren */
+  flex-direction: column; /* Inhalt und Buttons vertikal anordnen */
+  justify-content: space-between; /* Zwischen Inhalt und Button Abstand lassen */
+  transform: translate(-50%, -50%); /* Zentriert den Dialog */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Schatten für besseren Effekt */
+  padding: 0px; /* aktuell kein Innenabstand */
+  border: 2px solid var(--primary-border-color);
+  border-radius: var(--primary-border-radius);
+  box-sizing: border-box;
+  pointer-events: auto; /* Interaktionen sind erlaubt */
+}
+
 
 
 
