@@ -274,7 +274,7 @@ html, body {
     border-radius: var(--primary-border-radius);
     overflow: hidden; 
     box-sizing: border-box; 
-    padding: 5px;
+    padding: 0px;
     z-index: 2;
   }
 
@@ -330,6 +330,90 @@ html, body {
 #clara-image {
   display: none;
 }
+
+
+#chatbot-header {
+
+  display: flex; 
+  align-items: center; 
+  width: 100%; 
+  box-sizing: border-box; 
+  padding: 10px !important;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+#chatbot-input-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  padding: 10px !important;
+  box-sizing: border-box;
+  background-color: var(--secondary-background-color);
+  border-radius: 0px 0px var(--primary-border-radius) var(--primary-border-radius);
+  margin-top: 10px;
+  z-index: 2;
+}
+
+
+
+#chatbot-input {
+  display: block !important;
+  font-family: var(--company-font-family) !important;
+  font-size: var(--media-font-size-text) !important;
+  color: var(--primary-font-color) !important;
+  font-weight: normal !important;
+  padding: 5px 10px 5px 10px !important;
+  border: 1px solid var(--primary-border-color) !important;
+  border-radius: var(--primary-border-radius) !important;
+  margin: 0px !important;
+  width: 100% !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 122px !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+  resize: vertical !important;
+}
+
+#chatbot-input:focus {
+  border-color: var(--secondary-border-color) !important;
+  outline: none !important;
+}
+
+
+
+#chatbot-input::placeholder {
+  color: var(--secondary-font-color);
+  font-family: var(--company-font-family);
+  font-size: var(--media-font-size-text);
+  font-style: italic;
+  padding-left: 0px;
+}
+
+
+
+    #input-right {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -677,15 +761,6 @@ footer {
 
 
 
-    #chatbot-input {
-        font-size: var(--font-size-text);
-        height: 35px;
-    }
-    
-    #input-right {
-        width: 25px;
-        height: 25px;
-    }
     
     
     
@@ -5094,6 +5169,18 @@ const companyMainUrl = getComputedStyle(document.documentElement)
 document.getElementById('company-main-url').href = companyMainUrl;
 
 
+
+// Funktion zur automatischen Anpassung der Höhe des Textbereichs
+document.addEventListener('DOMContentLoaded', function() {
+    const inputField = document.getElementById('chatbot-input');
+
+    inputField.addEventListener('input', function() {
+        // Setzt die Höhe vor dem Neuberechnen auf 'auto'
+        this.style.height = 'auto';
+        // Passt die Höhe an die Scrollhöhe an, bis max-height erreicht ist
+        this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+    });
+});
 
 
 
