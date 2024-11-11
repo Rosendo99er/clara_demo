@@ -762,7 +762,7 @@ footer {
     flex-direction: column;
     box-sizing: border-box;
     z-index: 2; 
-}
+    }
 
     
     
@@ -783,6 +783,15 @@ footer {
     }
 
 
+#chatbot-messages {
+  flex-grow: 1;
+  overflow-y: auto; /* Ermöglicht Scrollen, wenn Nachrichten den Bereich überlaufen */
+  border-bottom: 0px solid var(--primary-border-color); /* aktuell ausgeblendet */
+  box-sizing: border-box;
+  padding: 20px !important;
+}
+
+
 
 
 #chatbot-messages-gpt div {
@@ -794,7 +803,7 @@ footer {
 
 
 #chatbot-messages-gpt .user-message {
-  padding: 30px 20px 0px 50px !important;
+  padding: 0px 0px 20px 30px !important;
   background-color: var(--primary-background-color);
   color: var(--secondary-font-color);
   font-family: var(--company-font-family);
@@ -806,7 +815,7 @@ footer {
 
 
 #chatbot-messages-gpt .bot-message {
-  padding: 20px 20px 0px 5px !important; 
+  padding: 0px 0px 20px 0px !important; 
   font-family: var(--company-font-family);
   background-color: var(--primary-background-color);
   text-align: left;
