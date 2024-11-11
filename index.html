@@ -5097,23 +5097,6 @@ const companyMainUrl = getComputedStyle(document.documentElement)
 document.getElementById('company-main-url').href = companyMainUrl;
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const consentCheckbox = document.getElementById('chatbot-consent-checkbox');
-    const consentContainer = document.getElementById('chatbot-consent-container');
-
-    consentCheckbox.addEventListener('change', function() {
-        // Überprüft, ob die Bildschirmbreite kleiner oder gleich 850px ist
-        if (window.innerWidth <= 850) {
-            if (this.checked) {
-                consentContainer.style.display = 'none';  // Blendet den Container aus
-            } else {
-                consentContainer.style.display = 'block'; // Zeigt den Container wieder an
-            }
-        }
-    });
-});
-
-
 
 
 
