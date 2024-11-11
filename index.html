@@ -719,6 +719,7 @@ footer {
       height: 90vh !important;
       box-sizing: border-box;
       overflow-y: auto;
+      overflow-x: hidden !important;
       padding: 0px 2px 0px 2px;
       border: 0px solid var(--tertiary-border-color);
     }
@@ -731,6 +732,7 @@ footer {
     min-height: 63vh !important;
     max-height: 90vh% !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
     border: 2px solid var(--tertiary-border-color);
     border-radius: var(--primary-border-radius);
     background-color: var(--primary-background-color);
@@ -771,7 +773,7 @@ footer {
 
 
 #chatbot-messages-gpt .user-message {
-  padding: 0px 20px 0px 10px !important;
+  padding: 0px 20px 0px 30px !important;
   background-color: var(--primary-background-color);
   color: var(--secondary-font-color);
   font-family: var(--company-font-family);
@@ -786,7 +788,7 @@ footer {
 
 #chatbot-messages-gpt .bot-message {
   font-family: var(--company-font-family);
-  padding: 0px 20px 0px 10px !important;
+  padding: 0px 20px 0px 30px !important;
   background-color: var(--primary-background-color);
   text-align: left;
   color: var(--website-standard-font-color-dark);
@@ -795,10 +797,11 @@ footer {
 
 
 
-/* Special Links */
+
 .special-link {
   color: var(--primary-link-color) !important;
   text-decoration: underline; 
+  padding-left: 20px !important;
 }
 
 
@@ -834,7 +837,7 @@ footer {
   left: 0%;
   top: 0%;
   width: 100%;
-  height: 100%;
+  height: 70% !important;
   display: flex; /* Flexbox für Zentrierung */
   justify-content: center;
   align-items: center;
@@ -855,7 +858,7 @@ footer {
   left: 50%;
   top: 50%;
   width: 90% !important;
-  height: 80% !important;
+  height: 70% !important;
   background-color: var(--primary-background-color);
   display: flex; /* Flexbox aktivieren */
   flex-direction: column; /* Inhalt und Buttons vertikal anordnen */
@@ -880,11 +883,11 @@ footer {
     box-sizing: border-box; /* Berücksichtigt Padding in der Breite */
     margin-top: 0px !important;
     margin-bottom: 10px;
-    padding: 20px;
+    padding: 0px !important;
 }
 
 .hmd-content .custom-h2 {
-    padding: 20px 0px 10px 0px !important;
+    padding: 20px 20px 0px 20px !important;
     border-radius: var(--primary-border-radius);
     text-align: left;
     font-size: var(--font-size-title) !important;
@@ -892,7 +895,7 @@ footer {
 }
 
 .hmd-content .custom-h3 {
-    padding: 20px 0px 0px 0px;
+    padding: 20px 20px 0px 20px !important;
     border-radius: var(--primary-border-radius);
     text-align: left;
     font-size: var(--font-size-subtitle) !important;
@@ -905,7 +908,7 @@ footer {
 .hmd-content p {
     font-size: var(--font-size-text);
     color: var(--website-standard-font-color-dark);
-    padding: 0px;
+    padding: 20px !important;
     margin: 0px;
 
 
@@ -913,7 +916,7 @@ footer {
 
 
 .hmd-content-ul {
-    margin-left: 10px;
+    margin-left: 0px !important;
     padding-right: 10px;
 }
 
@@ -925,7 +928,7 @@ footer {
     margin-bottom: 10px;
     line-height: 1.2 !important;
     list-style-type: disc;
-    padding-left: 0px;
+    padding-left: 0px !important;
 
 }
 
