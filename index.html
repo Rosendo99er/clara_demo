@@ -811,7 +811,7 @@ footer {
   background-color: var(--primary-background-color);
   text-align: left;
   color: var(--website-standard-font-color-dark);
-  margin-top: 10px !important; 
+  margin-top: 0px !important; 
   }
 
 
@@ -4157,6 +4157,9 @@ async function sendMessage() {
        loaderElement.style.display = 'block';
        document.getElementById('loader-container').style.display = 'flex';
        document.getElementById('loader-text').style.display = 'block';
+
+    // Scrollt die Seite sanft nach oben
+       window.scrollTo({ top: 0, behavior: 'smooth' });
 
 
     // Kontext und Kunde aus den CSS-Variablen holen
