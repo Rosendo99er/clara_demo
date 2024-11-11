@@ -225,14 +225,33 @@ html, body {
 @media screen and (max-width: 850px) {
 
 
+  html, body {
+    font-family: var(--company-font-family);
+    background-color: var(--primary-background-color);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
 
   #logo-header {
+    width: 100%;
     height: 10vh;
-    min-height: 60px;
+    min-height: 60px !important;
+    background-color: var(--company-logo-background);
+    display: flex;
     align-items: center;
-    justify-content: left;
-    padding-left: 10px !important;
-  }
+    justify-content: center !important;
+    padding: 0px !important;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+}
+
 
   #footer {
     height: 10vh;
@@ -244,6 +263,7 @@ html, body {
     background-image: var(--company-logo-url);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center; 
     width: 200px; 
     height: 40px;
   }
@@ -254,7 +274,7 @@ html, body {
     justify-content: center;
     background-color: var(--primary-background-color);
     border: 0px solid var(--secondary-border-color);
-    border-radius: var(--primary-border-radius);
+    border-radius: 0 !important;
     overflow: hidden; 
     box-sizing: border-box; 
     width: 100%;
@@ -272,7 +292,7 @@ html, body {
     max-height: 80% !important;
     background-color: var(--primary-background-color);
     border: 0px solid var(--primary-border-color) !important;
-    border-radius: var(--primary-border-radius);
+    border-radius: 0 !important;
     overflow: hidden; 
     box-sizing: border-box; 
     padding: 0px;
@@ -290,8 +310,9 @@ html, body {
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-  padding: 0px;
-  margin-top: 15px;
+  padding: 5px 0px 5px 0px !important; 
+  margin-top: 0px !important;
+  background-color: var(--primary-company-color) !important;
 }
 
 
@@ -311,12 +332,12 @@ html, body {
 .title-content .custom0c-p {
   display: block;
   font-family: var(--company-font-family);
-  font-weight: bold;
-  color: var(--primary-font-color);
+  font-weight: 400 !important;
+  color: var(--tertiary-font-color) !important;
   font-size: var(--media-font-size-title) !important;
   margin: 0 !important;
   text-align: center;
-  justify-content: center;
+  justify-content: center;  
 }
 
     
@@ -785,7 +806,7 @@ footer {
 
 
 #chatbot-messages-gpt .bot-message {
-  padding: 20px 30px 0px 10px !important; 
+  padding: 20px 20px 0px 5px !important; 
   font-family: var(--company-font-family);
   background-color: var(--primary-background-color);
   text-align: left;
@@ -2618,7 +2639,7 @@ textarea:-webkit-autofill {
 
         <p class="custom0a-p">Hallo, ich bin Chati,</p>
         <p class="custom0b-p">wenn Sie Fragen zum Thema Forderungsmanagement oder zum Unternehmen "cream collection Stephan Vila" (kurz "creamco") haben, dann sind Sie hier genau richtig. Ich weiß aber noch viel mehr. Versuchen Sie es einfach.</p>
-        <p class="custom0c-p">Chati</p>
+        <p class="custom0c-p">Chat Assistant</p>
 
 
     </div>
