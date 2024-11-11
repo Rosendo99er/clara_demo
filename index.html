@@ -370,8 +370,8 @@ html, body {
   border-radius: var(--primary-border-radius) !important;
   margin: 0px !important;
   width: 100% !important;
-  height: 32px !important;
-  min-height: 32px !important;
+  height: 35px !important;
+  min-height: 35px !important;
   max-height: 122px !important;
   overflow-y: auto !important;
   box-sizing: border-box !important;
@@ -393,12 +393,10 @@ html, body {
   padding-left: 0px;
 }
 
-
-
-    #input-right {
-        width: 35px !important;
-        height: 35px !important;
-    }
+#input-right {
+  width: 35px !important;
+  height: 35px !important;
+}
     
 
 
@@ -5169,18 +5167,6 @@ const companyMainUrl = getComputedStyle(document.documentElement)
 document.getElementById('company-main-url').href = companyMainUrl;
 
 
-
-// Funktion zur automatischen Anpassung der Höhe des Textbereichs
-document.addEventListener('DOMContentLoaded', function() {
-    const inputField = document.getElementById('chatbot-input');
-
-    inputField.addEventListener('input', function() {
-        // Setzt die Höhe vor dem Neuberechnen auf 'auto'
-        this.style.height = 'auto';
-        // Passt die Höhe an die Scrollhöhe an, bis max-height erreicht ist
-        this.style.height = Math.min(this.scrollHeight, 120) + 'px';
-    });
-});
 
 
 
