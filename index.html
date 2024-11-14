@@ -13,7 +13,7 @@
 
 <style>
 
-/* ########################creamco######################## */
+/* ########################creamco########################*/
 
 :root {
 
@@ -39,31 +39,32 @@
   --company-font-size-text: 18px;
   --company-font-size-fineprint: 18px;
   --company-font-size-button: 18px;
-  --form-and-field-company-color: #ddd;
+  --form-and-field-company-color: #fff;
+  --form-and-field-border-company-color: #707B84;
   --primary-background-company-color: #fff;
   --modal-background: rgba(0, 0, 0, 0.5);
   --clara-image-url: url("https://www.cream-collection.de/wp-content/uploads/go-x/u/8b4f2525-c964-461b-a6a9-daa9ef61f180/l0,t0,w482,h410/image-240x204.jpg");
-
+########################*/
 
 /* ########################customer
 
 :root {
 
-  --rules-customer: Demonstrator Inkasso GmbH; 
-  --company-main-url: "https://www.cream-collection.de";
-  --company-logo-url: url("https://www.cream-collection.de/wp-content/uploads/go-x/u/59b84de7-525d-4992-99ec-ac57b73c25b6/image-640x211.png");
+  --rules-customer: Königs Inkasso; 
+  --company-main-url: "https://koenigs-inkasso.de";
+  --company-logo-url: url("https://koenigs-inkasso.de/wp-content/uploads/sites/5/2018/07/logo-kg-inkasso-small.svg");
   --company-logo-background: var(--secondary-background-color);
-  --company-name: "cream collection Stephan Vila";
-  --company-street: "Roswithastraße 28";
-  --company-city: "45131 Essen";
-  --company-email: "stephan.vila@cream-collection.de";
-  --primary-company-color: #D87A92;
-  --secondary-company-color: #3FA6C7;
-  --tertiary-company-color: #707B84;
-  --tertiary-company-color-light: #F1F2F3;
-  --website-standard-font-color-light: #fff;
+  --company-name: "Königs Inkasso GmbH";
+  --company-street: "Mühlenstr. 49";
+  --company-city: "47918 Tönisvorst";
+  --company-email: "post24@koenigs-inkasso.de";
+  --primary-company-color: #FF4438  ;
+  --secondary-company-color: #909090;
+  --tertiary-company-color: #DEDFE3;
+  --tertiary-company-color-light: #FDFDFD;
+  --website-standard-font-color-light: #FDFDFD;
   --website-standard-font-color-dark: #000;
-  --primary-company-border-radius: 8px;
+  --primary-company-border-radius: 0px;
   --company-font-family: 'Quicksand', sans-serif;
   --company-font-weight: 300;
   --company-font-size-title: 27px;
@@ -71,12 +72,13 @@
   --company-font-size-text: 18px;
   --company-font-size-finePrint: 18px;
   --company-font-size-button: 18px;
-  --form-and-field-company-color: #ddd;
-  --primary-background-company-color: #fff;
+  --form-and-field-company-color: #FDFDFD;
+  --form-and-field-border-company-color: #DEDFE3;
+  --primary-background-company-color: #ECECEC;
   --modal-background: rgba(0, 0, 0, 0.5);
-  --clara-image-url: url("https://www.cream-collection.de/wp-content/uploads/go-x/u/8b4f2525-c964-461b-a6a9-daa9ef61f180/l0,t0,w482,h410/image-240x204.jpg");
+  --clara-image-url: url("https://rosendo99er.github.io/images/F70BB42B-E612-4FBD-89ED-91230C60F476.PNG");
 
-######################## */
+########################*/
 
   --primary-link-color: var(--primary-company-color);
   --secondary-link-color: var(--secondary-company-color);
@@ -84,7 +86,7 @@
 
   --body-background-color: var(--primary-background-company-Color);
 
-  --primary-border-color:   var(--form-and-field-company-color);
+  --primary-border-color:   var(--form-and-field-border-company-color);
   --secondary-border-color: var(--primary-company-color);
   --tertiary-border-color:  var(--tertiary-company-color);
 
@@ -170,7 +172,7 @@ html, body {
     background-size: contain;
     background-repeat: no-repeat;
     width: 200px; 
-    height: 60px;
+    height: 80px;
     
 }
 
@@ -265,7 +267,7 @@ html, body {
     background-repeat: no-repeat;
     background-position: center; 
     width: 200px; 
-    height: 40px;
+    height: 80px;
   }
 
   #section-container {
@@ -298,6 +300,38 @@ html, body {
     padding: 0px;
     z-index: 2;
   }
+
+
+  #chatbot-container {
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 63vh !important;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    padding: 0px 2px 0px 2px;
+    border: 0px solid var(--tertiary-border-color);
+  }
+
+
+
+#chatbot {
+  width: 100%;
+  height: 63vh !important;
+  min-height: 63vh !important;
+  max-height: 63vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  border: 2px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  background-color: var(--primary-background-color);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  z-index: 2; 
+}
 
 
 
@@ -413,20 +447,18 @@ html, body {
   font-family: var(--company-font-family);
   font-size: var(--media-font-size-text);
   font-style: italic;
+  font-weight: normal;
   padding-left: 0px;
 }
 
 
-
-
 }
 
 
 
-
-
-
-
+#contact-form-title-container {
+  display: none;
+}
 
 
 #contact-form-container {
@@ -451,13 +483,10 @@ html, body {
     display: none;
 }
 
-#loader-container {
-  top: 60%;
-}
 
 
 
-/* ++++++++++++++++++++++++ ENDE Anwendung Clara free ++++++++++++++++++++++++ */
+  /* ++++++++++++++++++++++++ ENDE Anwendung Clara free ++++++++++++++++++++++++ */
 
 
 
@@ -538,6 +567,11 @@ html, body {
 }
 
 
+#contact-form-title-container {
+  display: none;
+}
+
+
 #contact-form-container {
   display: none;
 }
@@ -565,9 +599,6 @@ html, body {
     display: none;
 }
 
-#loader-container {
-  top: 60%;
-}
 
 
   ++++++++++++++++++++++++ ENDE Anwendung Clara ++++++++++++++++++++++++ */
@@ -581,22 +612,392 @@ html, body {
 --rules-context: ChatbotContact; 
 }
 
+
+html, body {
+  font-family: var(--company-font-family);
+  background-color: var(--primary-background-color);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  }
+
+
 #logo-header {
-    display: none;
+    width: 100%;
+    height: 10vh;
+    min-height: 120px;
+    background-color: var(--company-logo-background);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    box-sizing: border-box;
+    margin-bottom: 0px;
 }
 
-footer {
-    display: none;
+#footer {
+    width: 100%;
+    height: 10vh;
+    background-color: var(--primary-company-color);
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    bottom: 0;
+    }
+
+
+#company-logo {
+    background-image: var(--company-logo-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px; 
+    height: 60px;
+    
 }
+
+
+
+#section-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--primary-background-color);
+    border: 0px solid var(--secondary-border-color);
+    border-radius: var(--primary-border-radius);
+    overflow: hidden; 
+    box-sizing: border-box; 
+    width: 100%;
+    height: 80vh;
+    min-height: 815px;
+    z-index: 1;    
+  }
+
+#toggle-container {
+    display: block;
+    width: 1000px;
+    height: 60vh;
+    min-height: 790px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: var(--primary-background-color);
+    border: 0px solid var(--primary-border-color);
+    border-radius: 0;
+    overflow: hidden; 
+    box-sizing: border-box; 
+    padding: 0px;
+    z-index: 2;
+  }
 
 
 #title-container {
   display: none;
 }
 
+#contact-form-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  padding: 5px 0px 5px 0px; 
+  margin-bottom: 20px;
+  background-color: var(--primary-company-color);
+}
+
+
+
+
+#contact-form-title-container .contact-form-title-content {
+    position: relative;
+    width: 1000px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    justify-content: center;
+    border: 0px solid #fff;
+    border-radius: 0;
+}
+
+
+.contact-form-title-content .contact-form-custom0c-p {
+  display: block;
+  font-family: var(--company-font-family);
+  font-weight: 400;
+  color: var(--tertiary-font-color);
+  font-size: var(--font-size-title);
+  margin: 0;
+  text-align: left;
+  justify-content: center;  
+  padding-left: 20px;
+}
+
+
+
+
 #clara-image {
   display: none;
 }
+
+
+
+
+#contact-form-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-background-color);
+  border: 0px solid var(--secondary-border-color);
+  border-radius: 0;
+  overflow: hidden; 
+  box-sizing: border-box; 
+  width: 100%;
+  z-index: 1;
+}
+
+
+
+#contact-form-container {
+  flex-direction: column;
+  align-items: center;
+  width: 1000px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 0px solid var(--secondary-border-color);
+  border-radius: 0;
+  padding: 0px 9px 0px 8px;
+  position: relative;
+  }
+
+
+
+
+#contact-form-aktennummer {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 2px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  resize: none;
+  height: 42px;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#contact-form-aktennummer,
+#contact-form-aktennummer:focus,
+#contact-form-aktennummer:valid {
+    background-color: var(--form-and-field-company-color);
+}
+
+
+#contact-form-aktennummer::placeholder {
+  color: var(--secondary-font-color);
+  font-size: var(--font-size-text);
+  font-style: italic;
+  font-weight: normal;
+  padding-left: 0px;
+}
+
+
+
+
+#contact-form-name {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 2px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  resize: none;
+  height: 42px; 
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#contact-form-name,
+#contact-form-name:focus,
+#contact-form-name:valid {
+    background-color: var(--form-and-field-company-color);
+}
+
+
+
+#contact-form-name::placeholder {
+  color: var(--secondary-font-color);
+  font-size: var(--font-size-text);
+  font-style: italic;
+  font-weight: normal;
+  padding-left: 0px;
+}
+
+
+
+
+#contact-form-email {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 2px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  background-color: var(--primary-background-color);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  resize: none;
+  height: 42px; 
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#contact-form-email,
+#contact-form-email:focus,
+#contact-form-email:valid {
+    background-color: var(--form-and-field-company-color);
+}
+
+
+
+
+#contact-form-email::placeholder {
+  color: var(--secondary-font-color);
+  font-size: var(--font-size-text);
+  font-style: italic;
+  font-weight: normal;
+  padding-left: 0px;
+}
+
+
+
+
+#contact-form-nachricht {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 2px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  background-color: var(--primary-background-color);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  resize: none;
+  box-sizing: border-box;
+  overflow: auto;
+  white-space: normal;
+  max-height: calc(1.5em * 6 + 20px);
+}
+
+
+
+
+#modalMessage {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 2px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  background-color: var(--primary-background-color);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  resize: none; 
+  box-sizing: border-box;
+  overflow: auto;
+  white-space: normal;
+  max-height: calc(1.5em * 6 + 20px);
+}
+
+
+
+
+
+#contact-form-nachricht,
+#contact-form-nachricht:focus,
+#contact-form-nachricht:valid {
+    background-color: var(--form-and-field-company-color);
+}
+
+#modalMessage,
+#modalMessage:focus,
+#modalMessage:valid {
+    background-color: var(--primary-background-color);
+}
+
+
+
+
+
+
+
+
+#contact-form-nachricht::placeholder {
+  color: var(--secondary-font-color);
+  font-size: var(--font-size-text);
+  font-style: italic;
+  font-weight: normal;
+  padding-left: 0px;
+}
+
+
+
+#modalMessage::placeholder {
+  color: var(--secondary-font-color);
+  font-size: var(--font-size-text);
+  font-style: italic;
+  padding-left: 0px;
+}
+
+
+
+
+
+
+
+
 
 #contact-form-container {
   display: block;
@@ -614,19 +1015,354 @@ footer {
 
 #chatbot-container {
   display: none;
-  margin-top: -80px;
+  margin-top: 10px;
 }
 
 #instant-answer-dialog-button-container {
   display: flex;
 }
 
-#loader-container {
-  top: 50%;
+
+
+
+@media screen and (max-width: 600px) {
+
+
+html, body {
+  font-family: var(--company-font-family);
+  background-color: var(--primary-background-color);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 
- ++++++++++++++++++++++++ ENDE Anwendung Chatbot mit Kontaktformular ++++++++++++++++++++++++ */
+#logo-header {
+  width: 100%;
+  height: 10vh;
+  min-height: 60px !important;
+  background-color: var(--company-logo-background);
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  padding: 0px !important;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+}
+
+
+#footer {
+  height: 10vh;
+  min-height: 60px;
+  }
+
+
+#company-logo {
+  background-image: var(--company-logo-url);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; 
+  width: 200px; 
+  height: 40px;
+}
+
+
+#contact-form-title-container {
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  padding: 5px 0px 5px 0px !important; 
+  margin-top: 0px !important;
+  background-color: var(--primary-company-color) !important;
+}
+
+
+
+
+#contact-form-title-container .contact-form-title-content {
+    position: relative;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+
+
+.contact-form-title-content .contact-form-custom0c-p {
+  display: block;
+  font-family: var(--company-font-family);
+  font-weight: 400 !important;
+  color: var(--tertiary-font-color) !important;
+  font-size: var(--media-font-size-title) !important;
+  margin: 0 !important;
+  text-align: center;
+  justify-content: center;  
+  padding-left: 0px;
+}
+
+
+#contact-form-aktennummer {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  resize: none;
+  height: 35px;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+
+#contact-form-name {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  resize: none;
+  height: 35px; 
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+#contact-form-email {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  background-color: var(--primary-background-color);
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  resize: none;
+  height: 35px; 
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+
+
+
+
+#contact-form-nachricht {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  background-color: var(--primary-background-color);
+  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  resize: none;
+  box-sizing: border-box;
+  overflow: auto;
+  white-space: normal;
+  max-height: calc(1.2em * 4 + 20px) !important;
+}
+
+
+
+#section-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--primary-background-color);
+  border: 0px solid var(--secondary-border-color);
+  border-radius: 0 !important;
+  overflow: hidden; 
+  box-sizing: border-box; 
+  width: 100%;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  z-index: 1;    
+}
+
+#toggle-container {
+  display: block;
+  width: 100%;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-width: none;
+  max-height: 100% !important;
+  background-color: var(--primary-background-color);
+  border: 0px solid var(--primary-border-color) !important;
+  border-radius: 0 !important;
+  overflow: hidden; 
+  box-sizing: border-box; 
+  padding: 0px;
+  z-index: 2;
+}
+
+
+#chatbot-container {
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 85vh !important;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  padding: 0px;
+  border: 0px solid var(--primary-border-color) !important;
+}
+
+
+
+#chatbot {
+  width: 100%;
+  height: 75vh !important;
+  min-height: 63vh !important;
+  max-height: 75vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  border: 1px solid var(--primary-border-color) !important;
+  border-radius: var(--primary-border-radius);
+  background-color: var(--primary-background-color);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  z-index: 2; 
+}
+
+
+#chatbot-header {
+
+display: flex; 
+align-items: center; 
+width: 100%; 
+box-sizing: border-box; 
+padding: 10px !important;
+border-bottom: 1px solid #ddd;
+}
+
+
+
+#chatbot-input-container {
+display: flex;
+flex-direction: column;
+height: auto;
+width: 100%;
+padding: 10px !important;
+box-sizing: border-box;
+background-color: var(--secondary-background-color);
+border-radius: 0px 0px var(--primary-border-radius) var(--primary-border-radius);
+margin-top: 10px;
+min-height: 60px !important;
+z-index: 2;
+}
+
+
+
+#chatbot-input {
+display: block !important;
+font-family: var(--company-font-family) !important;
+font-size: var(--media-font-size-text) !important;
+color: var(--primary-font-color) !important;
+font-weight: normal !important;
+padding: 5px 10px 5px 10px !important;
+border: 1px solid var(--primary-border-color) !important;
+border-radius: var(--primary-border-radius) !important;
+margin: 0px !important;
+width: 100% !important;
+height: 45px !important;
+min-height: 45px !important;
+max-height: 122px !important;
+overflow-y: auto !important;
+box-sizing: border-box !important;
+resize: vertical !important;
+}
+
+#chatbot-input:focus {
+border-color: var(--secondary-border-color) !important;
+outline: none !important;
+}
+
+
+
+#chatbot-input::placeholder {
+color: var(--secondary-font-color);
+font-family: var(--company-font-family);
+font-size: var(--media-font-size-text);
+font-style: italic;
+font-weight: normal;
+padding-left: 0px;
+}
+
+
+
+#contact-form-container {
+  flex-direction: column;
+  align-items: center;
+  width: 100% !important;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 0px solid var(--secondary-border-color);
+  border-radius: 0;
+  padding: 0px 9px 0px 8px;
+  position: relative;
+  }
+
+
+
+}
+
+
+
+  ++++++++++++++++++++++++ ENDE Anwendung Chatbot mit Kontaktformular ++++++++++++++++++++++++ */
 
 
 
@@ -652,6 +1388,14 @@ footer {
 #clara-image {
   display: none;
 }
+
+
+
+#contact-form-title-container {
+  display: none;
+}
+
+
 
 
 #contact-form-container {
@@ -688,10 +1432,7 @@ footer {
   display: flex;
 }
 
-#loader-container {
-  margin-top: -270px;
-  top: 50%;
-}
+
 
 #input-button-container {
   display: none;
@@ -733,36 +1474,7 @@ footer {
     }
  
   
-  #chatbot-container {
-      flex-grow: 1;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      height: 63vh !important;
-      box-sizing: border-box;
-      overflow-y: auto;
-      overflow-x: hidden !important;
-      padding: 0px 2px 0px 2px;
-      border: 0px solid var(--tertiary-border-color);
-    }
 
-
-
-  #chatbot {
-    width: 100%;
-    height: 63vh !important;
-    min-height: 63vh !important;
-    max-height: 63vh !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    border: 2px solid var(--tertiary-border-color);
-    border-radius: var(--primary-border-radius);
-    background-color: var(--primary-background-color);
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    z-index: 2; 
-    }
 
     
     
@@ -784,6 +1496,7 @@ footer {
 
 
 #chatbot-messages {
+  position: relative;
   flex-grow: 1;
   overflow-y: auto;
   overflow-x: hidden; 
@@ -807,7 +1520,7 @@ footer {
 #chatbot-messages-gpt .user-message {
   padding: 0px 0px 20px 30px !important;
   background-color: var(--primary-background-color);
-  color: var(--secondary-font-color);
+  color: var(--primary-font-color);
   font-family: var(--company-font-family);
   font-size: var(--media-font-size-text) !important;
   font-weight: bold;
@@ -990,6 +1703,43 @@ footer {
 }
 
 
+.send-confirmation-dialog {
+    z-index: 10000000 !important;
+    position: absolute;
+    background-color: var(--primary-background-color);
+    left: 50%;
+    top: 50%;
+    width: 90vh !important;
+    max-width: 90% !important;
+    height: auto;
+    max-height: 75vh;
+    transform: translate(-50%, -50%); /* Zentriert den Dialog */
+    pointer-events: auto; /* Interaktionen sind erlaubt */
+    box-sizing: border-box;
+    border: 2px solid var(--primary-border-color);
+    border-radius: var(--primary-border-radius);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Optional: Schatten für besseren Effekt */
+    overflow: hidden; /* Verhindert, dass der Inhalt den Container überschreitet */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }   /* Ende der Media Queries */
@@ -1099,220 +1849,6 @@ body.modal-open {
 }
 
 
-/* Stil für den Contact Form Container */
-#contact-form-container {
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden; /* Verhindert ungewolltes Scrollen */
-  padding: 0px 9px 0px 8px;
-  position: relative;
-  }
-
-
-
-/* Stil für das Eingabefeld Aktennummer im Contact Form */
-#contact-form-aktennummer {
-  font-family: var(--company-font-family);
-  font-size: var(--font-size-text);
-  color: var(--primary-font-color);
-  font-weight: normal;
-  flex: 1;
-  padding: 10px 10px 10px 30px;
-  border: 2px solid var(--tertiary-border-color);
-  border-radius: var(--primary-border-radius);
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 100%;
-  resize: none;
-  height: 42px; /* Minimale Höhe */
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  position: relative;
-}
-
-#contact-form-aktennummer,
-#contact-form-aktennummer:focus,
-#contact-form-aktennummer:valid {
-    background-color: var(--primary-background-color);
-}
-
-
-/* Stil für den Platzhaltertext im Eingabefeld */
-#contact-form-aktennummer::placeholder {
-  color: var(--secondary-font-color);
-  font-size: var(--font-size-text);
-  font-style: italic;
-  padding-left: 0px;
-}
-
-
-
-/* Stil für das Eingabefeld Name im Contact Form */
-#contact-form-name {
-  font-family: var(--company-font-family);
-  font-size: var(--font-size-text);
-  color: var(--primary-font-color);
-  font-weight: normal;
-  flex: 1;
-  padding: 10px 10px 10px 30px;
-  border: 2px solid var(--tertiary-border-color);
-  border-radius: var(--primary-border-radius);
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 100%;
-  resize: none;
-  height: 42px; /* Minimale Höhe */
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  position: relative;
-}
-
-#contact-form-name,
-#contact-form-name:focus,
-#contact-form-name:valid {
-    background-color: var(--primary-background-color);
-}
-
-
-/* Stil für den Platzhaltertext im Eingabefeld */
-#contact-form-name::placeholder {
-  color: var(--secondary-font-color);
-  font-size: var(--font-size-text);
-  font-style: italic;
-  padding-left: 0px;
-}
-
-
-
-/* Stil für das Eingabefeld email im Contact Form */
-#contact-form-email {
-  font-family: var(--company-font-family);
-  font-size: var(--font-size-text);
-  color: var(--primary-font-color);
-  font-weight: normal;
-  flex: 1;
-  padding: 10px 10px 10px 30px;
-  border: 2px solid var(--tertiary-border-color);
-  border-radius: var(--primary-border-radius);
-  background-color: var(--primary-background-color);
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 100%;
-  resize: none;
-  height: 42px; /* Minimale Höhe */
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  position: relative;
-}
-
-/* Stil für den Platzhaltertext im Eingabefeld */
-#contact-form-email::placeholder {
-  color: var(--secondary-font-color);
-  font-size: var(--font-size-text);
-  font-style: italic;
-  padding-left: 0px;
-}
-
-
-
-/* Stil für das Eingabefeld Nachricht im Contact Form */
-#contact-form-nachricht {
-  font-family: var(--company-font-family);
-  font-size: var(--font-size-text);
-  color: var(--primary-font-color);
-  font-weight: normal;
-  flex: 1;
-  padding: 10px 10px 10px 30px;
-  border: 2px solid var(--tertiary-border-color);
-  border-radius: var(--primary-border-radius);
-  background-color: var(--primary-background-color);
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 100%;
-  resize: none; /* Kein manuelles Vergrößern des Feldes */
-  box-sizing: border-box;
-  overflow: auto; /* Scrollbar erscheint bei mehr als 6 Zeilen Text */
-  white-space: normal; /* Mehrzeiliger Text zulassen */
-  max-height: calc(1.5em * 6 + 20px); /* Maximalhöhe auf 6 Zeilen beschränkt + Padding */
-}
-
-
-
-/* Stil für das Eingabefeld Nachricht im Modaldialog*/
-#modalMessage {
-  font-family: var(--company-font-family);
-  font-size: var(--font-size-text);
-  color: var(--primary-font-color);
-  font-weight: normal;
-  flex: 1;
-  padding: 10px 10px 10px 30px;
-  border: 2px solid var(--tertiary-border-color);
-  border-radius: var(--primary-border-radius);
-  background-color: var(--primary-background-color);
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 100%;
-  resize: none; /* Kein manuelles Vergrößern des Feldes */
-  box-sizing: border-box;
-  overflow: auto; /* Scrollbar erscheint bei mehr als 6 Zeilen Text */
-  white-space: normal; /* Mehrzeiliger Text zulassen */
-  max-height: calc(1.5em * 6 + 20px); /* Maximalhöhe auf 6 Zeilen beschränkt + Padding */
-}
-
-
-
-
-
-#contact-form-nachricht,
-#contact-form-nachricht:focus,
-#contact-form-nachricht:valid {
-    background-color: var(--primary-background-color);
-}
-
-#modalMessage,
-#modalMessage:focus,
-#modalMessage:valid {
-    background-color: var(--primary-background-color);
-}
-
-
-
-
-
-
-
-/* Stil für den Platzhaltertext im Nachrichtenfeld */
-#contact-form-nachricht::placeholder {
-  color: var(--secondary-font-color);
-  font-size: var(--font-size-text);
-  font-style: italic;
-  padding-left: 0px;
-}
-
-
-/* Stil für den Platzhaltertext im Nachrichtenfeld im Modaldialog */
-#modalMessage::placeholder {
-  color: var(--secondary-font-color);
-  font-size: var(--font-size-text);
-  font-style: italic;
-  padding-left: 0px;
-}
-
 
 
 
@@ -1333,7 +1869,7 @@ body.modal-open {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 100px; /* Mindesthöhe für den Container */
+  min-height: 0px; /* Mindesthöhe für den Container */
   box-sizing: border-box;
   overflow-x: hidden; /* Verhindert ungewolltes Scrollen */
   padding: 0px 9px 0px 8px;
@@ -1587,6 +2123,7 @@ body.modal-open {
 
 
 #chatbot-messages {
+  position: relative;
   flex-grow: 1;
   overflow-y: auto; /* Ermöglicht Scrollen, wenn Nachrichten den Bereich überlaufen */
   border-bottom: 0px solid var(--primary-border-color); /* aktuell ausgeblendet */
@@ -1674,7 +2211,7 @@ body.modal-open {
 #chatbot-messages-gpt .user-message {
   padding: 10px 20px 15px 35px;
   background-color: var(--primary-background-color);
-  color: var(--secondary-font-color);
+  color: var(--primary-font-color);
   font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   font-weight: bold;
@@ -1822,7 +2359,7 @@ body.modal-open {
   width: 30px;
   height: 30px;
   margin-left:10px;
-  margin-right: 0px;
+  margin-right: 10px;
   cursor: pointer;    
 }
 
@@ -1840,13 +2377,13 @@ body.modal-open {
   color: var(--primary-font-color);
   font-weight: normal;
   padding: 10px 10px 10px 30px;
-  border: 0px solid var(--primary-border-color);
+  border: 2px solid var(--tertiary-border-color);
   border-radius: var(--primary-border-radius);
   margin-bottom: 0px;
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  height: 45px; /* Höhe */
+  height: 47px; /* Höhe */
   min-height: 45px; /* Minimale Höhe */
   max-height: 200px; /* Maximale Höhe */
   max-width: 100%;
@@ -1865,6 +2402,7 @@ body.modal-open {
   font-family: var(--company-font-family);
   font-size: var(--font-size-text);
   font-style: italic;
+  font-weight: normal;
   padding-left: 0px;
 }
 
@@ -1981,14 +2519,15 @@ body.modal-open {
 
 /* Container für die Button im Eingabebereich */
 #input-button-container {
-  position: sticky;
-  bottom: 0px;
+  position: relative;
+  bottom: 0;
   justify-content: flex-start; /* Buttons linksbündig platzieren */
-  gap: 10px;
+  flex-direction: column;
+  gap: 0px;
   width: 100%;
   height: auto;
-  padding: 10px;
-  margin-top: 15px;
+  padding: 0px;
+  margin-top: 0px;
   z-index: 2;
   }
 
@@ -1996,7 +2535,7 @@ body.modal-open {
 
 /* Container für die Outlook-Integrations-Button */
 #back-to-outlook-container {
-  position: sticky;
+  position: fixed;
   bottom: 0px;
   justify-content: center;
   width: 100%;
@@ -2101,15 +2640,16 @@ body.modal-open {
 
 #loader-container {
   display: none;
+  position: absolute;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   flex-direction: column;
-  max-width: 80%;
-  position: absolute;
-  margin: 0 auto;
   justify-content: center; /* Horizontale Zentrierung */
   align-items: center;    /* Vertikale Zentrierung */
   z-index: 1000;
+  max-width: 80%;
+  margin: 0 auto;
   }
 
 
@@ -2315,7 +2855,8 @@ body.modal-open {
     width: 100%; /* Nimmt die volle Breite des Containers ein */
     display: block; /* Stellt sicher, dass der Text als Block angezeigt wird */
     font-size: var(--company-font-size-text);
-
+    font-family: var(--company-font-family);
+    font-weight: 500;
 }
 
 
@@ -2355,31 +2896,29 @@ body.modal-open {
     top: 0%;
     width: 100%;
     height: 100%;
-    display: flex; /* Flexbox für Zentrierung */
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--modal-background);
     box-sizing: border-box;
-    pointer-events: auto; /* Interaktionen sind erlaubt */
+    pointer-events: auto;
 }
 
 
 
-/* Dialog-Container */
 .send-confirmation-dialog {
     z-index: 10000000 !important;
     position: absolute;
     background-color: var(--primary-background-color);
     left: 50%;
     top: 50%;
-    width: 40%;
+    width: 60%;
     max-width: 60vh;
     height: auto;
     max-height: 75vh;
     transform: translate(-50%, -50%); /* Zentriert den Dialog */
     pointer-events: auto; /* Interaktionen sind erlaubt */
     box-sizing: border-box;
-    z-index: 1002;
     border: 2px solid var(--primary-border-color);
     border-radius: var(--primary-border-radius);
     display: flex;
@@ -2391,15 +2930,19 @@ body.modal-open {
 
 
 .send-confirmation-content {
-    flex: 1; /* Nimmt den verfügbaren Platz ein */
-    overflow: auto;
+    flex: 1; 
+    box-sizing: border-box;
+    overflow-y: auto;
     padding: 40px;
     max-height:50vh;
     position: relative;
     width: 100%;
     text-align: left;
     margin-bottom: 20px;
+    border: 2px solid var(--primary-border-color);
+    border-radius: var(--primary-border-radius);
 }
+
 
 
 .send-confirmation-content .custom2-h2 {
@@ -2428,6 +2971,46 @@ body.modal-open {
 
 
 
+
+
+
+.send-confirmation-content .email-nachricht {
+  font-family: var(--company-font-family);
+  font-size: var(--font-size-text);
+  color: var(--primary-font-color);
+  font-weight: normal;
+  padding: 10px 10px 10px 30px;
+  border: 2px solid var(--tertiary-border-color);
+  border-radius: var(--primary-border-radius);
+  background-color: var(--primary-background-color);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 10px;
+  width: 100%;
+  resize: none;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: normal;
+  max-height: calc(1.5em * 6 + 20px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .send-confirmation-button-container {
     display: flex;
     justify-content: center; /* Zentriert die Buttons im Dialog */
@@ -2443,9 +3026,10 @@ body.modal-open {
 
 
 .icon {
-    width: 30px;             /* Standardgröße (Breite) des Icons */
-    height: 30px;            /* Standardgröße (Höhe) des Icons */
-    stroke: var(--primary-font-color);
+    width: 40px;             /* Standardgröße (Breite) des Icons */
+    height: 40px;            /* Standardgröße (Höhe) des Icons */
+    stroke: var(--primary-company-color);
+    stroke-width: 1.5;
     fill: none;
     cursor: pointer;         /* Zeiger als Cursor, geeignet für klickbare Icons */
     transition: all 0.3s ease; /* Weiche Übergänge für alle Änderungen (Größe, Farbe etc.) */
@@ -2561,7 +3145,7 @@ body.modal-open {
     text-align: center; 
     flex: 1; /* Nimmt den verfügbaren Platz ein */
     overflow: auto;
-    padding: 30px;
+    padding: 10px 0px 10px 0px;
     max-height:50vh;
     width: 100%;
     color: var(--secondary-font-color);
@@ -2614,7 +3198,62 @@ textarea:-webkit-autofill {
 #section-container {
   padding: 0;
   margin: 0;
+  }
+
+
+.collapsible-container {
+    max-height: 1000px; /* Festgelegte maximale Höhe, die größer ist als der Inhalt */
+    overflow: hidden;
+    transition: max-height 0.5s ease; /* Sanfter Übergang */
 }
+
+
+.collapsed {
+    max-height: 0 !important; /* Höhe im zugeklappten Zustand */
+    min-width: 0 !important; /* Höhe im zugeklappten Zustand */
+    height: 0 !important;
+    padding: 0;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+    box-sizing: border-box; 
+}
+
+
+#open-close-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Setzt den Container als Bezugspunkt */
+}
+
+.arrow-button {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center; /* Vertikale Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+}
+
+.arrow-button::before {
+    content: '';
+    border: solid var(--primary-font-color); /* Farbe des Pfeils */
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(45deg); /* Pfeil nach unten */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg); /* Zentrierung */
+}
+
+
+
 
 
 
@@ -2635,7 +3274,40 @@ textarea:-webkit-autofill {
 </div>
 
 
+<div id="contact-form-title-container">
 
+  <div class="contact-form-title-content">
+
+      <p class="contact-form-custom0c-p">Chat Assistant</p>
+
+  </div>
+
+</div>
+
+
+<div id="open-close-button-container" class="collapsible-container collapsed">
+
+  <button onclick="opencloseChatbotConsentContainer(); opencloseContactFormSectionContainer(); opencloseInstantAnswerDialogButtonContainer(); opencloseInstantAnswerDialogButton()" class="arrow-button"></button>
+
+</div>
+
+
+
+<div id="contact-form-section-container" class="collapsible-container">
+
+<div id="contact-form-container">
+
+  <input type="text" id="contact-form-aktennummer" name="aktennummer" placeholder="Aktennummer" maxlength="500" autocomplete="name" required />
+
+  <input type="text" id="contact-form-name" name="name" placeholder="Vor- und Nachname" maxlength="500" autocomplete="name" required />
+
+  <input type="email" id="contact-form-email" name="email" placeholder="E-Mail-Adresse" maxlength="100" autocomplete="email" required />
+
+  <textarea id="contact-form-nachricht" name="Kontaktnachricht" rows="6" placeholder="Ihr Anliegen / Ihre Nachricht" maxlength="2000" required></textarea>
+
+</div>
+
+</div>
 
 
 <div id="section-container">
@@ -2649,7 +3321,7 @@ textarea:-webkit-autofill {
     <div class="title-content">
 
         <p class="custom0a-p">Hallo, ich bin Chati,</p>
-        <p class="custom0b-p">wenn Sie Fragen zum Thema Forderungsmanagement oder zum Unternehmen "cream collection Stephan Vila" (kurz "creamco") haben, dann sind Sie hier genau richtig. Ich weiß aber noch viel mehr. Versuchen Sie es einfach.</p>
+        <p class="custom0b-p">wenn Sie Fragen zum Thema Forderungsmanagement oder zu meinem Unternehmen haben, dann sind Sie hier genau richtig. Ich weiß aber noch viel mehr. Versuchen Sie es einfach.</p>
         <p class="custom0c-p">Chat Assistant</p>
 
 
@@ -2664,22 +3336,12 @@ textarea:-webkit-autofill {
 
 
 
-<div id="contact-form-container">
-
-    <input type="text" id="contact-form-aktennummer" name="aktennummer" placeholder="Bitte Aktennummer eingeben, wenn vorhanden." maxlength="500" autocomplete="name" required />
-
-    <input type="text" id="contact-form-name" name="name" placeholder="Bitte Vor- und Nachnamen eingeben." maxlength="500" autocomplete="name" required />
-
-    <input type="email" id="contact-form-email" name="email" placeholder="Ihre E-Mail-Adresse" maxlength="100" autocomplete="email" required />
-
-    <textarea id="contact-form-nachricht" name="Kontaktnachricht" rows="6" placeholder="Bitte beschreiben Sie Ihr Anliegen." maxlength="2000" required></textarea>
-
-</div>
 
 
 
 
-<div id="chatbot-consent-container">
+
+<div id="chatbot-consent-container" class="collapsible-container">
 
     <div id="chatbot-consent">
 
@@ -2691,9 +3353,9 @@ textarea:-webkit-autofill {
 
     
     
-<div id="instant-answer-dialog-button-container">
+<div id="instant-answer-dialog-button-container" class="collapsible-container">
      
-    <button id="instant-answer-dialog-button" onclick="transferMessageToChatbot()">Sofortantwort erhalten</button>
+    <button id="instant-answer-dialog-button" class="collapsible-container" onclick="transferMessageToChatbot(); opencloseChatbotConsentContainer(); opencloseContactFormSectionContainer(); opencloseInstantAnswerDialogButtonContainer(); opencloseInstantAnswerDialogButton(); opencloseOpenCloseButtonContainer()">Sofortantwort erhalten</button>
     <button id="message-send-button" onclick="openConfirmationModal()">Nachricht senden</button>
 
 
@@ -3247,12 +3909,12 @@ textarea:-webkit-autofill {
             <div id="chatbot-input-inner-container">
 
                 <div id="input-left"> 
-                <textarea id="chatbot-input" placeholder="Wie kann ich Ihnen helfen?" maxlength="2000"></textarea>
+                 <textarea id="chatbot-input" placeholder="Wie kann ich Ihnen helfen?" maxlength="2000"></textarea>
                 </div>
                 <div id="input-right"> 
 
                     <button id="input-right" aria-label="Frage an Chatbot senden" style="background:none;border:none;cursor:pointer;height:45px;width:45px" onclick="sendMessage()">
-                    <svg class="icon hover-scale" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" title="Frage an Chatbot senden">  
+                    <svg class="icon hover-scale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" title="Frage an Chatbot senden">  
                     <title>Frage an Chatbot senden</title>
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5">
                     </path>
@@ -3272,18 +3934,14 @@ textarea:-webkit-autofill {
 
         </div>
 
+    
     </div>
-
-
-
-
-
 
 
     <div id="input-button-container">
 
-        <button id="everythingOK" class="okAndnotOK-Button" onclick="openDeleteConfirmation3()">Alle Fragen beantwortet</button>
-        <button id="notOK" class="okAndnotOK-Button" onclick="openConfirmationModal()">Nachricht senden</button>
+        <button id="everythingOK" class="okAndnotOK-Button" onclick="openDeleteConfirmation3()">Dialog schließen</button>
+        <button id="notOK" class="okAndnotOK-Button" onclick="openConfirmationModal()">E-Mail senden</button>
 
     </div>
 
@@ -3336,7 +3994,7 @@ textarea:-webkit-autofill {
             <p><strong>Ihre E-Mail-Adresse:</strong></p>
             <p><span id="modalEmail"></span></p>
             <p><strong>Ihre Nachricht:</strong></p>
-            <textarea id="modalMessage" cass="contact-form-nachricht" style="white-space:pre-wrap" name="Nachricht" rows="4" placeholder="Bitte beschreiben Sie Ihr Anliegen." maxlength="2000"></textarea>
+            <textarea id="modalMessage" class="email-nachricht" style="white-space:pre-wrap" name="Nachricht" rows="4" placeholder="Ihr Anliegen / Ihre Nachricht" maxlength="2000"></textarea>
             <p> </p>
             <p><strong>Übersetzte Chat-Historie:</strong></p>
             <div id="translated-chat-history" style="white-space:pre-wrap">
@@ -3431,7 +4089,7 @@ const textTranslations = {
         "consentText": "Ich habe die <a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>Nutzungsbedingungen und Datenschutzerklärung</a> gelesen, verstanden und akzeptiert.",
         "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
         "commonQuestions": "aktuell nicht in Benutzung",
-        "selectQuestion": "aktuell nicht in Benutzung",
+        "selectQuestion": "Thema",
         "sendButton": "Frage senden",
         "clearButton": "Historie leeren",
         "messageButton": "Nachricht senden",
@@ -3445,7 +4103,7 @@ const textTranslations = {
         "confirm2Button": "OK",
         "confirm3Button": "OK",
         "confirm4Button": "OK",
-        "everythingOK": "Alle Fragen beantwortet",
+        "everythingOK": "Dialog schließen",
         "notOK": "Nachricht senden",
         "resetPageText1": "Wir freuen uns, dass wir Ihnen mit diesem Service helfen konnten.",
         "resetPageText2": "Ihre Chat-Historie wird gelöscht und die Nachricht verworfen.",
@@ -3462,12 +4120,12 @@ const textTranslations = {
             "aktuell nicht in Benutzung",
         ],   
         "themes": [
-            "aktuell nicht in Benutzung",
-            "aktuell nicht in Benutzung",
-            "aktuell nicht in Benutzung",
-            "aktuell nicht in Benutzung",
-            "aktuell nicht in Benutzung",
-            "aktuell nicht in Benutzung"    
+            "Forderungsaufstellung",
+            "Forderungsgrund",
+            "Zahlungseingang",
+            "Ratenzahlung",
+            "Widerspruch",
+            "Über cream collection"    
         ],
     },
 
@@ -3479,7 +4137,7 @@ const textTranslations = {
         "consentText": "I have read, understood, and accepted the <a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>terms of use and privacy policy</a>.",
         "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
         "commonQuestions": "currently not in use",
-        "selectQuestion": "currently not in use",
+        "selectQuestion": "Theme",
         "sendButton": "Send Question",
         "clearButton": "Clear History",
         "messageButton": "Send Message",
@@ -3493,7 +4151,7 @@ const textTranslations = {
         "confirm2Button": "OK",
         "confirm3Button": "OK",
         "confirm4Button": "OK",
-        "everythingOK": "All questions answered",
+        "everythingOK": "Close dialog",
         "notOK": "Send message",
         "resetPageText1": "We are glad that we could assist you with this service.",
         "resetPageText2": "Your chat history will be deleted and the message discarded.",
@@ -3510,12 +4168,12 @@ const textTranslations = {
             "currently not in use"
         ],   
         "themes": [
-            "currently not in use",
-            "currently not in use",
-            "currently not in use",
-            "currently not in use",
-            "currently not in use",
-            "currently not in use"
+            "Statement of claims", 
+            "Reason for claim", 
+            "Incoming payment", 
+            "Installment payment", 
+            "Objection", 
+            "About cream collection"
         ],
 
     },
@@ -3527,7 +4185,7 @@ const textTranslations = {
         "consentText": "He leído, comprendido y aceptado los <a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>términos de uso y la política de privacidad</a>.",
         "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
         "commonQuestions": "No está en uso.",
-        "selectQuestion": "No está en uso.",
+        "selectQuestion": "Tema",
         "sendButton": "Enviar Pregunta",
         "clearButton": "Borrar Historial",
         "messageButton": "Enviar Mensaje",
@@ -3541,7 +4199,7 @@ const textTranslations = {
         "confirm2Button": "OK",
         "confirm3Button": "OK",
         "confirm4Button": "OK",
-        "everythingOK": "¡Todas las preguntas respondidas",
+        "everythingOK": "Cerrar diálogo",
         "notOK": "Enviar mensaje",
         "resetPageText1": "Nos alegra haber podido ayudarle con este servicio.",
         "resetPageText2": "Su historial de chat será eliminado y el mensaje descartado.",
@@ -3558,12 +4216,12 @@ const textTranslations = {
             "No está en uso."
         ],   
         "themes": [
-            "No está en uso.",
-            "No está en uso.",
-            "No está en uso.",
-            "No está en uso.",
-            "No está en uso.",
-            "No está en uso."
+            "Declaración de reclamaciones",
+            "Razón de la reclamación",
+            "Pago recibido",
+            "Pago a plazos",
+            "Objeción",
+            "Acerca de cream collection"
         ],
 
      },
@@ -3575,7 +4233,7 @@ const textTranslations = {
     "consentText": "<a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>Kullanım Koşulları ve Gizlilik Politikasını</a> okudum, anladım ve kabul ettim.",
     "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
     "commonQuestions": "şu anda kullanılmıyor",
-    "selectQuestion": "şu anda kullanılmıyor",
+    "selectQuestion": "Konu",
     "sendButton": "Soru Gönder",
     "clearButton": "Geçmişi Temizle",
     "messageButton": "Mesaj Gönder",
@@ -3589,7 +4247,7 @@ const textTranslations = {
     "confirm2Button": "Tamam",
     "confirm3Button": "Tamam",
     "confirm4Button": "Tamam",
-    "everythingOK": "Tüm sorular yanıtlandı",
+    "everythingOK": "Diyaloğu kapat",
     "notOK": "Mesaj gönder",
     "resetPageText1": "Bu hizmetle size yardımcı olabildiğimiz için mutluyuz.",
     "resetPageText2": "Sohbet geçmişiniz silinecek ve mesaj iptal edilecektir.",
@@ -3606,12 +4264,12 @@ const textTranslations = {
         "şu anda kullanılmıyor"
     ],
     "themes": [
-        "şu anda kullanılmıyor",
-        "şu anda kullanılmıyor",
-        "şu anda kullanılmıyor",
-        "şu anda kullanılmıyor",
-        "şu anda kullanılmıyor",
-        "şu anda kullanılmıyor"
+    "Alacak beyannamesi",
+        "Alacak nedeni",
+        "Gelen ödeme",
+        "Taksitli ödeme",
+        "İtiraz",
+        "cream collection hakkında"
     ]
 },
 
@@ -3622,7 +4280,7 @@ const textTranslations = {
     "consentText": "لقد قرأت وفهمت ووافقت على <a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>شروط الاستخدام وسياسة الخصوصية</a>.",
     "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
     "commonQuestions": "غير مستخدم حاليًا",
-    "selectQuestion": "غير مستخدم حاليًا",
+    "selectQuestion": "موضوع",
     "sendButton": "إرسال السؤال",
     "clearButton": "مسح المحفوظات",
     "messageButton": "إرسال رسالة",
@@ -3636,7 +4294,7 @@ const textTranslations = {
     "confirm2Button": "موافق",
    "confirm3Button": "موافق",
    "confirm4Button": "موافق",
-  "everythingOK": "تمت الإجابة على جميع الأسئلة",
+  "everythingOK": "إغلاق الحوار",
     "notOK": "إرسال الرسالة",
     "resetPageText1": "نحن سعداء لأننا تمكنا من مساعدتك بهذه الخدمة.",
     "resetPageText2": "سيتم حذف سجل المحادثة الخاص بك وسيتم تجاهل الرسالة.",    
@@ -3653,12 +4311,12 @@ const textTranslations = {
         "غير مستخدم حاليًا"
     ],
     "themes": [
-        "غير مستخدم حاليًا",
-        "غير مستخدم حاليًا",
-        "غير مستخدم حاليًا",
-        "غير مستخدم حاليًا",
-        "غير مستخدم حاليًا",
-        "غير مستخدم حاليًا"
+        "بيان المطالبات",
+        "سبب المطالبة",
+        "الدفعة الواردة",
+        "دفع بالتقسيط",
+        "اعتراض",
+        "حول cream collection"
     ]
 },
 
@@ -3670,7 +4328,7 @@ const textTranslations = {
     "consentText": "Я прочитал, понял и согласен с <a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>условиями использования и политикой конфиденциальности</a>.",
     "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
     "commonQuestions": "в настоящее время не используется",
-    "selectQuestion": "в настоящее время не используется",
+    "selectQuestion": "Тема",
     "sendButton": "Отправить вопрос",
     "clearButton": "Очистить историю",
     "messageButton": "Отправить сообщение",
@@ -3684,7 +4342,7 @@ const textTranslations = {
     "confirm2Button": "ОК",
     "confirm3Button": "OK",
     "confirm4Button": "OK",
-    "everythingOK": "Все вопросы отвечены",
+    "everythingOK": "Закрыть диалог",
     "notOK": "Отправить сообщение",
     "resetPageText1": "Мы рады, что смогли помочь вам с этой услугой.",
     "resetPageText2": "История чата будет удалена, а сообщение отменено.",
@@ -3701,12 +4359,12 @@ const textTranslations = {
         "в настоящее время не используется"
     ],
     "themes": [
-        "в настоящее время не используется",
-        "в настоящее время не используется",
-        "в настоящее время не используется",
-        "в настоящее время не используется",
-        "в настоящее время не используется",
-        "в настоящее время не используется"
+    "Заявление о требованиях",
+        "Основание для требования",
+        "Входящий платеж",
+        "Оплата в рассрочку",
+        "Возражение",
+        "О компании cream collection"
     ]
 },
 
@@ -3719,7 +4377,7 @@ const textTranslations = {
     "consentText": "Przeczytałem, zrozumiałem i zaakceptowałem <a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>warunki użytkowania i politykę prywatności</a>.",
     "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
     "commonQuestions": "obecnie nieużywane",
-    "selectQuestion": "obecnie nieużywane",
+    "selectQuestion": "Temat",
     "sendButton": "Wyślij pytanie",
     "clearButton": "Wyczyść historię",
     "messageButton": "Wyślij wiadomość",
@@ -3733,7 +4391,7 @@ const textTranslations = {
     "confirm2Button": "OK",
     "confirm3Button": "OK",
     "confirm4Button": "OK",
-    "everythingOK": "Wszystkie pytania zostały odpowiedziane",
+    "everythingOK": "Zamknij dialog",
     "notOK": "Wyślij wiadomość",
     "resetPageText1": "Cieszymy się, że mogliśmy pomóc Ci w tej usłudze.",
     "resetPageText2": "Historia czatu zostanie usunięta, a wiadomość odrzucona.",
@@ -3750,12 +4408,12 @@ const textTranslations = {
         "obecnie nieużywane"
     ],
     "themes": [
-        "obecnie nieużywane",
-        "obecnie nieużywane",
-        "obecnie nieużywane",
-        "obecnie nieużywane",
-        "obecnie nieużywane",
-        "obecnie nieużywane"
+    "Oświadczenie o roszczeniach",
+        "Podstawa roszczenia",
+        "Wpływ płatności",
+        "Płatność ratalna",
+        "Sprzeciw",
+        "O cream collection"
     ]
 },
 
@@ -3768,7 +4426,7 @@ const textTranslations = {
     "consentText": "Am citit, înțeles și acceptat <a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>termenii și condițiile de utilizare și politica de confidențialitate</a>.",
     "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
     "commonQuestions": "în prezent nu este utilizat",
-    "selectQuestion": "în prezent nu este utilizat",
+    "selectQuestion": "Temă",
     "sendButton": "Trimiteți întrebare",
     "clearButton": "Ștergeți istoricul",
     "messageButton": "Trimiteți mesaj",
@@ -3782,7 +4440,7 @@ const textTranslations = {
     "confirm2Button": "OK",
     "confirm3Button": "OK",
     "confirm4Button": "OK",
-    "everythingOK": "Toate întrebările au fost răspunse",
+    "everythingOK": "Închide dialogul",
     "notOK": "Trimite mesaj",
     "resetPageText1": "Ne bucurăm că v-am putut ajuta cu acest serviciu.",
     "resetPageText2": "Istoricul dvs. de chat va fi șters și mesajul va fi anulat.",
@@ -3799,12 +4457,12 @@ const textTranslations = {
         "în prezent nu este utilizat"
     ],
     "themes": [
-        "în prezent nu este utilizat",
-        "în prezent nu este utilizat",
-        "în prezent nu este utilizat",
-        "în prezent nu este utilizat",
-        "în prezent nu este utilizat",
-        "în prezent nu este utilizat"
+    "Declarație de creanțe",
+        "Motivul creanței",
+        "Plată primită",
+        "Plată în rate",
+        "Obiecție",
+        "Despre cream collection"
     ]
 },
 
@@ -3816,7 +4474,7 @@ const textTranslations = {
     "consentText": "Έχω διαβάσει, κατανοήσει και αποδεχτεί τους <a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>όρους χρήσης και την πολιτική απορρήτου</a>.",
     "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
     "commonQuestions": "αυτήν τη στιγμή δεν χρησιμοποιείται",
-    "selectQuestion": "αυτήν τη στιγμή δεν χρησιμοποιείται",
+    "selectQuestion": "Θέμα",
     "sendButton": "Υποβολή Ερώτησης",
     "clearButton": "Διαγραφή Ιστορικού",
     "messageButton": "Αποστολή Μηνύματος",
@@ -3830,7 +4488,7 @@ const textTranslations = {
     "confirm2Button": "Εντάξει",
     "confirm3Button": "Εντάξει", 
     "confirm4Button": "Εντάξει",
-    "everythingOK": "Όλες οι ερωτήσεις απαντήθηκαν",
+    "everythingOK": "Κλείσιμο διαλόγου",
     "notOK": "Αποστολή μηνύματος",
     "resetPageText1": "Χαιρόμαστε που μπορέσαμε να σας βοηθήσουμε με αυτή την υπηρεσία.",
     "resetPageText2": "Το ιστορικό συνομιλιών σας θα διαγραφεί και το μήνυμα θα απορριφθεί.",
@@ -3847,12 +4505,12 @@ const textTranslations = {
         "αυτήν τη στιγμή δεν χρησιμοποιείται"
     ],
     "themes": [
-        "αυτήν τη στιγμή δεν χρησιμοποιείται",
-        "αυτήν τη στιγμή δεν χρησιμοποιείται",
-        "αυτήν τη στιγμή δεν χρησιμοποιείται",
-        "αυτήν τη στιγμή δεν χρησιμοποιείται",
-        "αυτήν τη στιγμή δεν χρησιμοποιείται",
-        "αυτήν τη στιγμή δεν χρησιμοποιείται"
+        "Κατάσταση απαιτήσεων",
+        "Λόγος απαίτησης",
+        "Εισερχόμενη πληρωμή",
+        "Πληρωμή σε δόσεις",
+        "Αντίρρηση",
+        "Σχετικά με το cream collection"
     ]
 },
 
@@ -3863,7 +4521,7 @@ const textTranslations = {
     "consentText": "Ho letto, compreso e accettato i <a id='consent-link' class='special-link' href='{{dataProtectionUrl}}' target='_blank'>termini di utilizzo e l'informativa sulla privacy</a>.",
     "dataProtectionUrl": "https://www.cream-collection.de/nutzung-and-datenschutz-chatbot/",
     "commonQuestions": "attualmente non in uso",
-    "selectQuestion": "attualmente non in uso",
+    "selectQuestion": "Tema",
     "sendButton": "Invia domanda",
     "clearButton": "Cancella cronologia",
     "messageButton": "Invia messaggio",
@@ -3877,7 +4535,7 @@ const textTranslations = {
     "confirm2Button": "OK",
     "confirm3Button": "OK",
     "confirm4Button": "OK",
-    "everythingOK": "Tutte le domande sono state risposte",
+    "everythingOK": "Chiudi dialogo",
     "notOK": "Invia messaggio",
     "resetPageText1": "Siamo felici di aver potuto aiutarvi con questo servizio.",
     "resetPageText2": "La cronologia della chat verrà cancellata e il messaggio verrà eliminato.",
@@ -3894,12 +4552,12 @@ const textTranslations = {
         "attualmente non in uso"
     ],
     "themes": [
-        "attualmente non in uso",
-        "attualmente non in uso",
-        "attualmente non in uso",
-        "attualmente non in uso",
-        "attualmente non in uso",
-        "attualmente non in uso"
+        "Dichiarazione delle pretese",
+        "Motivo della pretesa",
+        "Pagamento ricevuto",
+        "Pagamento rateale",
+        "Obiezione",
+        "Informazioni su cream collection"
     ]
 },
 
@@ -4387,7 +5045,7 @@ function setThemesDropdownInDOM(language) {
   const themesContainer = document.getElementById('theme');
 
   const themesHTML = `
-    <option value="">-- ${translations.selectQuestion} --</option>
+    <option value="">${translations.selectQuestion}</option>
     ${translations.themes.map(theme => `
       <option value="${theme}">${theme}</option>
     `).join('')}
@@ -4419,6 +5077,9 @@ function updateFlagAndSendMessage() {
     // Übersetze den Text basierend auf der ausgewählten Sprache
     const translations = textTranslations[selectedLanguage];
     console.log("Übersetzungen geladen:", translations);
+
+    // Aktualisiere die `Themes`-Dropdown-Optionen:
+    setThemesDropdownInDOM(selectedLanguage);
 
     // Ersetze {{dataProtectionUrl}} im consentText durch die URL aus den Sprachdaten
     const consentTextWithUrl = translations.consentText.replace('{{dataProtectionUrl}}', translations.dataProtectionUrl);
@@ -5132,10 +5793,14 @@ function confirmDelete() {
 
 // Bestätige das Löschen, lösche die Nachrichten und schließe den Chatbot
 function confirmDelete2() {
-    clearMessages(); // Die Funktion zum Löschen der Chat-Historie
-    closeDeleteConfirmation(); // Schließe das Modal nach der Bestätigung
-    closeChatbot(); //Schließe den Chatbot
+  removeAllCollapsed();
+  opencloseOpenCloseButtonContainer();
+  clearMessages(); // Die Funktion zum Löschen der Chat-Historie
+  closeDeleteConfirmation(); // Schließe das Modal nach der Bestätigung
+  closeChatbot(); //Schließe den Chatbot
 }
+
+
 
 
 
@@ -5322,11 +5987,11 @@ function fillModalContent() {
 
 
 
-
-
-
 function resetPage() {
-    location.reload();
+    location.reload(); // Lädt die Seite neu
+    setTimeout(() => {
+        window.scrollTo(0, 0); // Scrollt nach oben, falls die Seite an eine alte Position zurückspringt
+    }, 0);
 }
 
 
@@ -5389,6 +6054,46 @@ const companyMainUrl = getComputedStyle(document.documentElement)
 
 // Füge die URL zum Link hinzu
 document.getElementById('company-main-url').href = companyMainUrl;
+
+
+
+function opencloseChatbotConsentContainer() {
+    const container = document.getElementById('chatbot-consent-container');
+    container.classList.toggle('collapsed'); // Fügt 'collapsed' hinzu oder entfernt sie
+}
+
+function opencloseContactFormSectionContainer() {
+    const container = document.getElementById('contact-form-section-container');
+    container.classList.toggle('collapsed'); // Fügt 'collapsed' hinzu oder entfernt sie
+}
+
+function opencloseInstantAnswerDialogButtonContainer() {
+    const container = document.getElementById('instant-answer-dialog-button-container');
+    container.classList.toggle('collapsed'); // Fügt 'collapsed' hinzu oder entfernt sie
+}
+
+function opencloseInstantAnswerDialogButton() {
+    const container = document.getElementById('instant-answer-dialog-button');
+    container.classList.toggle('collapsed'); // Fügt 'collapsed' hinzu oder entfernt sie
+}
+
+
+function opencloseOpenCloseButtonContainer() {
+    const container = document.getElementById('open-close-button-container');
+    container.classList.toggle('collapsed'); // Fügt 'collapsed' hinzu oder entfernt sie
+}
+
+
+
+function removeAllCollapsed() {
+    // Wählt alle Container mit der Klasse .collapsible-container aus
+    const containers = document.querySelectorAll('.collapsible-container');
+    
+    containers.forEach(container => {
+        container.classList.remove('collapsed'); // Entfernt 'collapsed' von jedem Container
+        console.log(`'collapsed' entfernt von:`, container);
+    });
+}
 
 
 
