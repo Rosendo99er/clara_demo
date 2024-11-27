@@ -7842,9 +7842,8 @@ document.addEventListener('click', function(event) {
         // Nachricht in das Eingabefeld einfügen und senden
         const inputField = document.getElementById('chatbot-input');
         inputField.value = message; // Nachricht ins Feld einfügen
+        deleteLink();
         sendMessage(); // Vorhandene Sende-Funktion aufrufen
-        // Link entfernen nach dem DOM-Update
-        setTimeout(deleteLink, 0); // Wartet, bis das DOM aktualisiert wurde
     }
 });
 
