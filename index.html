@@ -6120,22 +6120,10 @@ async function sendMessage() {
 
 
 
-  const lastBotMessage = document.querySelectorAll('.bot-message:last-child .suggested-link');
-  lastBotMessage.forEach(link => {
-    const label = link.textContent;
-    link.replaceWith(document.createTextNode(label));
-  });
-
-
-
   // Loader verstecken
   loaderElement.style.display = 'none';
   document.getElementById('loader-container').style.display = 'none';
   document.getElementById('loader-text').style.display = 'none';
-
-
-
-
 
 
 
@@ -6197,6 +6185,17 @@ async function processIncomingData(response) {
 
 
 }
+
+
+function deleteLink() {
+  const lastBotMessage = document.querySelectorAll('.bot-message:last-child .suggested-link');
+    lastBotMessage.forEach(link => {
+      const label = link.textContent;
+      link.replaceWith(document.createTextNode(label));
+    });
+  }
+
+
 
 
 
@@ -7844,6 +7843,7 @@ document.addEventListener('click', function(event) {
         const inputField = document.getElementById('chatbot-input');
         inputField.value = message; // Nachricht ins Feld einfügen
         sendMessage(); // Vorhandene Sende-Funktion aufrufen
+        deleteLink(); // Link entfernen
     }
 });
 
