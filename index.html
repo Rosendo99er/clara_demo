@@ -8033,7 +8033,9 @@
     const dropdownField = document.getElementById("chatbot-themes");
     const dropdownOption = document.getElementById("theme");
 
-
+    // Zustand der Consent-Checkbox prüfen
+    const consentCheckbox = document.getElementById("chatbot-consent-checkbox");
+    const isConsentGiven = consentCheckbox && consentCheckbox.checked;
 
     if (inputField) {
       if (lastBotMessage && lastBotMessage.querySelector(".suggested-link")) {
@@ -8044,13 +8046,27 @@
         if (dropdownOption) dropdownOption.disabled = true;
       } else {
         // Entsperre das Eingabefeld, Icon und Dropdown, wenn kein suggested-link vorhanden ist
-        inputField.disabled = false;
-        if (inputIcon) inputIcon.disabled = false;
-        if (dropdownField) dropdownField.disabled = false;
-        if (dropdownOption) dropdownOption.disabled = false;
+        if (isConsentGiven) {
+          inputField.disabled = false;
+          if (inputIcon) inputIcon.disabled = false;
+          if (dropdownField) dropdownField.disabled = false;
+          if (dropdownOption) dropdownOption.disabled = false;
+        }
       }
     }
   }
+
+  // Event Listener hinzufügen, um Änderungen an der Consent-Checkbox zu verfolgen
+  const consentCheckbox = document.getElementById("chatbot-consent-checkbox");
+  if (consentCheckbox) {
+    consentCheckbox.addEventListener("change", checkForSuggestedLink);
+  }
+
+  // Initiale Prüfung beim Laden der Seite
+  checkForSuggestedLink();
+  });
+
+
 
   // Beobachte Änderungen im DOM (für neue bot-messages)
   const observer = new MutationObserver(checkForSuggestedLink);
@@ -8111,6 +8127,9 @@
     const dropdownField = document.getElementById("chatbot-themes");
     const dropdownOption = document.getElementById("theme");
 
+    // Zustand der Consent-Checkbox prüfen
+    const consentCheckbox = document.getElementById("chatbot-consent-checkbox");
+    const isConsentGiven = consentCheckbox && consentCheckbox.checked;
 
 
     if (inputField) {
@@ -8121,14 +8140,30 @@
         if (dropdownField) dropdownField.disabled = true;
         if (dropdownOption) dropdownOption.disabled = true;
       } else {
+
         // Entsperre das Eingabefeld, Icon und Dropdown, wenn kein send-email-link vorhanden ist
-        inputField.disabled = false;
-        if (inputIcon) inputIcon.disabled = false;
-        if (dropdownField) dropdownField.disabled = false;
-        if (dropdownOption) dropdownOption.disabled = false;
+        if (isConsentGiven) {
+          inputField.disabled = false;
+          if (inputIcon) inputIcon.disabled = false;
+          if (dropdownField) dropdownField.disabled = false;
+          if (dropdownOption) dropdownOption.disabled = false;
+         }
       }
     }
   }
+
+  // Event Listener hinzufügen, um Änderungen an der Consent-Checkbox zu verfolgen
+  const consentCheckbox = document.getElementById("chatbot-consent-checkbox");
+  if (consentCheckbox) {
+    consentCheckbox.addEventListener("change", checkForSendEmailLink);
+  }
+
+  // Initiale Prüfung beim Laden der Seite
+  checkForSendEmailLink();
+  });
+
+
+
 
   // Beobachte Änderungen im DOM (für neue bot-messages)
   const observer = new MutationObserver(checkForSendEmailLink);
