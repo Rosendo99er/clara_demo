@@ -47,8 +47,8 @@
     --tertiary-company-color: #707B84;
     --primary-company-color-dark: #000;
     --secondary-company-color-dark: #3FA6C7;
-    --primary-company-color-light: #fff;
-    --secondary-company-color-light: #F1F2F3  ;
+    --primary-company-color-light: #E2E4E6;/*fff*/
+    --secondary-company-color-light: #F1F2F3;/*F1F2F3*/
     --modal-background: rgba(0, 0, 0, 0.5);
   
     --body-background-color: var(--primary-company-color-light);
@@ -4548,6 +4548,35 @@
 
 
 
+#snowfall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1000000;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background-color: white; /* Schneeflockenfarbe */
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+  z-index: 1000000;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
 
 
 
@@ -4568,7 +4597,10 @@
   
   
   <body>
+
+    <div id="snowfall"></div>
  
+
     <div id="delete-confirmation-modal" class="modal-standard-background" aria-modal="true">
   
       <div class="modal-standard-inner">
@@ -8067,47 +8099,59 @@ function saveHiddenCodeToHistory(code) {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {   
-  // Funktion, um das Eingabefeld zu sperren oder zu entsperren   
-  function checkForLinks() {     
-    const botMessages = document.querySelectorAll(".bot-message");     
-    const lastBotMessage = document.querySelector(".bot-message:last-child");      
 
-    // Zu sperrende Felder finden     
-    const inputField = document.getElementById("chatbot-input");     
-    const inputIcon = document.getElementById("input-right");     
-    const dropdownField = document.getElementById("chatbot-themes");     
-    const dropdownOption = document.getElementById("theme");      
 
-    if (inputField) {       
-      if (
-        lastBotMessage && 
-        (lastBotMessage.querySelector(".suggested-link") || 
-         lastBotMessage.querySelector(".send-email-link"))
-      ) {         
-        // Sperre das Eingabefeld, Icon und Dropdown, wenn einer der Links vorhanden ist         
-        inputField.disabled = true;         
-        if (inputIcon) inputIcon.disabled = true;         
-        if (dropdownField) dropdownField.disabled = true;         
-        if (dropdownOption) dropdownOption.disabled = true;       
-      } else {         
-        // Entsperre das Eingabefeld, Icon und Dropdown, wenn keiner der Links vorhanden ist         
-        inputField.disabled = false;         
-        if (inputIcon) inputIcon.disabled = false;         
-        if (dropdownField) dropdownField.disabled = false;         
-        if (dropdownOption) dropdownOption.disabled = false;       
-      }     
-    }   
-  }    
-
-  // Beobachte Änderungen im DOM (für neue bot-messages)   
-  const observer = new MutationObserver(checkForLinks);   
-  const targetNode = document.getElementById("chatbot-container");    
-
-  if (targetNode) {     
-    observer.observe(targetNode, { childList: true, subtree: true });   
-  } 
-});
+document.addEventListener("DOMContentLoaded", function () {
+    // Funktion: Sperrt oder entsperrt das Eingabefeld basierend auf Links
+    function updateInputState(linkClass) {
+      const lastBotMessage = document.querySelector(".bot-message:last-child");
+  
+      // Zu sperrende Felder finden
+      const inputField = document.getElementById("chatbot-input");
+      const inputIcon = document.getElementById("input-right");
+      const dropdownField = document.getElementById("chatbot-themes");
+      const dropdownOption = document.getElementById("theme");
+  
+      if (inputField) {
+        if (lastBotMessage && lastBotMessage.querySelector(linkClass)) {
+          // Sperre Eingabefeld, Icon und Dropdown
+          inputField.disabled = true;
+          if (inputIcon) inputIcon.disabled = true;
+          if (dropdownField) dropdownField.disabled = true;
+          if (dropdownOption) dropdownOption.disabled = true;
+        } else {
+          // Entsperre Eingabefeld, Icon und Dropdown
+          inputField.disabled = false;
+          if (inputIcon) inputIcon.disabled = false;
+          if (dropdownField) dropdownField.disabled = false;
+          if (dropdownOption) dropdownOption.disabled = false;
+        }
+      }
+    }
+  
+    // Funktion: Check für "suggested-link"
+    function checkForSuggestedLink() {
+      updateInputState(".suggested-link");
+    }
+  
+    // Funktion: Check für "send-email-link"
+    function checkForSendEmailLink() {
+      updateInputState(".send-email-link");
+    }
+  
+    // Beobachte Änderungen im DOM (für neue bot-messages)
+    const observer = new MutationObserver(() => {
+      checkForSuggestedLink();
+      checkForSendEmailLink();
+    });
+  
+    const targetNode = document.getElementById("chatbot-messages");
+  
+    if (targetNode) {
+      observer.observe(targetNode, { childList: true, subtree: true });
+    }
+  });
+  
 
 
 
@@ -8126,6 +8170,30 @@ window.addEventListener('beforeunload', (event) => {
 //if (passwort !== "vila") {
 //  document.body.innerHTML = "Zugriff verweigert.";
 //}
+
+
+  const snowfallContainer = document.getElementById("snowfall");
+
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+
+    const size = Math.random() * 5 + 5; // Schneeflockengröße
+    snowflake.style.width = `${size}px`;
+    snowflake.style.height = `${size}px`;
+
+    snowflake.style.left = `${Math.random() * 100}vw`;
+    snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`;
+
+    snowfallContainer.appendChild(snowflake);
+
+    setTimeout(() => {
+      snowflake.remove();
+    }, 8000); // Entferne die Schneeflocke nach Ende der Animation
+  }
+
+  setInterval(createSnowflake, 100);
+
 
 
   
