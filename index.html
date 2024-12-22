@@ -8067,59 +8067,51 @@ function saveHiddenCodeToHistory(code) {
 
 
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Funktion: Sperrt oder entsperrt das Eingabefeld basierend auf Links
-    function updateInputState(linkClass) {
-      const lastBotMessage = document.querySelector(".bot-message:last-child");
-  
-      // Zu sperrende Felder finden
-      const inputField = document.getElementById("chatbot-input");
-      const inputIcon = document.getElementById("input-right");
-      const dropdownField = document.getElementById("chatbot-themes");
-      const dropdownOption = document.getElementById("theme");
-  
-      if (inputField) {
-        if (lastBotMessage && lastBotMessage.querySelector(linkClass)) {
-          // Sperre Eingabefeld, Icon und Dropdown
-          inputField.disabled = true;
-          if (inputIcon) inputIcon.disabled = true;
-          if (dropdownField) dropdownField.disabled = true;
-          if (dropdownOption) dropdownOption.disabled = true;
-        } else {
-          // Entsperre Eingabefeld, Icon und Dropdown
-          inputField.disabled = false;
-          if (inputIcon) inputIcon.disabled = false;
-          if (dropdownField) dropdownField.disabled = false;
-          if (dropdownOption) dropdownOption.disabled = false;
-        }
+  // Funktion, um das Eingabefeld zu sperren oder zu entsperren
+  function checkForSuggestedLink() {
+    const botMessages = document.querySelectorAll(".bot-message");
+    const lastBotMessage = document.querySelector(".bot-message:last-child");
+
+    // Zu sperrende Felder finden
+    const inputField = document.getElementById("chatbot-input");
+    const inputIcon = document.getElementById("input-right");
+    const dropdownField = document.getElementById("chatbot-themes");
+    const dropdownOption = document.getElementById("theme");
+
+
+
+    if (inputField) {
+      if (lastBotMessage && lastBotMessage.querySelector(".suggested-link")) {
+        // Sperre das Eingabefeld, Icon und Dropdown, wenn suggested-link vorhanden ist
+        inputField.disabled = true;
+        if (inputIcon) inputIcon.disabled = true;
+        if (dropdownField) dropdownField.disabled = true;
+        if (dropdownOption) dropdownOption.disabled = true;
+      } else {
+        // Entsperre das Eingabefeld, Icon und Dropdown, wenn kein suggested-link vorhanden ist
+        inputField.disabled = false;
+        if (inputIcon) inputIcon.disabled = false;
+        if (dropdownField) dropdownField.disabled = false;
+        if (dropdownOption) dropdownOption.disabled = false;
       }
     }
-  
-    // Funktion: Check für "suggested-link"
-    function checkForSuggestedLink() {
-      updateInputState(".suggested-link");
-    }
-  
-    // Funktion: Check für "send-email-link"
-    function checkForSendEmailLink() {
-      updateInputState(".send-email-link");
-    }
-  
-    // Beobachte Änderungen im DOM (für neue bot-messages)
-    const observer = new MutationObserver(() => {
-      checkForSuggestedLink();
-      checkForSendEmailLink();
-    });
-  
-    const targetNode = document.getElementById("chatbot-messages-gpt");
-  
-    if (targetNode) {
-      observer.observe(targetNode, { childList: true, subtree: true });
-    }
-  });
-  
+  }
+
+  // Beobachte Änderungen im DOM (für neue bot-messages)
+  const observer = new MutationObserver(checkForSuggestedLink);
+  const targetNode = document.getElementById("chatbot-container");
+
+  if (targetNode) {
+    observer.observe(targetNode, { childList: true, subtree: true });
+  }
+
+  // Führe die Überprüfung initial aus
+  //checkForSuggestedLink();
+});
+
+
+
 
 
 
