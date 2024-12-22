@@ -8004,174 +8004,142 @@
   
   
   
+
+  
+
   document.addEventListener('click', function(event) {
-      const target = event.target;
-  
-      if (target.classList.contains('suggested-link')) {
-          event.preventDefault(); // Standard-Link-Verhalten verhindern
-          const message = target.textContent.trim(); // Text des Links lesen
-          const hiddenCode = target.id;
-  
-          // Nachricht in das Eingabefeld einfügen und senden
-          const inputField = document.getElementById('chatbot-input');
-          inputField.value = message; // Nachricht ins Feld einfügen
-          saveHiddenCodeToHistory(hiddenCode)
-          deleteLink();
-          sendMessage(); // Vorhandene Sende-Funktion aufrufen
-      }
-  });
+    const target = event.target;
 
+    if (target.classList.contains('suggested-link')) {
+        event.preventDefault(); // Standard-Link-Verhalten verhindern
+        const message = target.textContent.trim(); // Text des Links lesen
+        const hiddenCode = target.id;
 
-  // Neue Funktion für das Speichern der ID
-  function saveHiddenCodeToHistory(code) {
-      conversationHistory.push({ role: 'user', content: code });
-  }
-  
-
-  document.addEventListener("DOMContentLoaded", function () {
-  // Funktion, um das Eingabefeld zu sperren oder zu entsperren
-  function checkForSuggestedLink() {
-    const botMessages = document.querySelectorAll(".bot-message");
-    const lastBotMessage = document.querySelector(".bot-message:last-child");
-
-    // Zu sperrende Felder finden
-    const inputField = document.getElementById("chatbot-input");
-    const inputIcon = document.getElementById("input-right");
-    const dropdownField = document.getElementById("chatbot-themes");
-    const dropdownOption = document.getElementById("theme");
-
-
-
-    if (inputField) {
-      if (lastBotMessage && lastBotMessage.querySelector(".suggested-link")) {
-        // Sperre das Eingabefeld, Icon und Dropdown, wenn suggested-link vorhanden ist
-        inputField.disabled = true;
-        if (inputIcon) inputIcon.disabled = true;
-        if (dropdownField) dropdownField.disabled = true;
-        if (dropdownOption) dropdownOption.disabled = true;
-      } else {
-        // Entsperre das Eingabefeld, Icon und Dropdown, wenn kein suggested-link vorhanden ist
-        inputField.disabled = false;
-        if (inputIcon) inputIcon.disabled = false;
-        if (dropdownField) dropdownField.disabled = false;
-        if (dropdownOption) dropdownOption.disabled = false;
-      }
+        // Nachricht in das Eingabefeld einfügen und senden
+        const inputField = document.getElementById('chatbot-input');
+        inputField.value = message; // Nachricht ins Feld einfügen
+        saveHiddenCodeToHistory(hiddenCode)
+        deleteLink();
+        sendMessage(); // Vorhandene Sende-Funktion aufrufen
     }
-  }
-
-  // Beobachte Änderungen im DOM (für neue bot-messages)
-  const observer = new MutationObserver(checkForSuggestedLink);
-  const targetNode = document.getElementById("chatbot-container");
-
-  if (targetNode) {
-    observer.observe(targetNode, { childList: true, subtree: true });
-  }
-
-  // Führe die Überprüfung initial aus
-//  checkForSuggestedLink();
 });
 
 
 
-  document.addEventListener('click', async function(event) {
-      const target = event.target;
+document.addEventListener('click', async function(event) {
+    const target = event.target;
+
+    if (target.classList.contains('send-email-link') && target.id === 'FmpRateRP') {
+        event.preventDefault(); // Standard-Link-Verhalten verhindern
+        const message = target.textContent.trim(); // Text des Links lesen
+        const hiddenCode = target.id;
+
+        // Nachricht in das Eingabefeld einfügen und senden
+        const inputField = document.getElementById('chatbot-input');
+        inputField.value = message; // Nachricht ins Feld einfügen
+        saveHiddenCodeToHistory(hiddenCode)
+        deleteLink2();
+        await openConfirmationModal();
+        sendMessage(); // Vorhandene Sende-Funktion aufrufen
+    }
+    if (target.classList.contains('send-email-link') && target.id !== 'FmpRateRP') {
+        event.preventDefault(); // Standard-Link-Verhalten verhindern
+        const message = target.textContent.trim(); // Text des Links lesen
+        const hiddenCode = target.id;
+
+        // Nachricht in das Eingabefeld einfügen und senden
+        const inputField = document.getElementById('chatbot-input');
+        inputField.value = message; // Nachricht ins Feld einfügen
+        saveHiddenCodeToHistory(hiddenCode)
+        deleteLink2();
+        sendMessage(); // Vorhandene Sende-Funktion aufrufen
+    }
+});
+
+
+// Neue Funktion für das Speichern der ID
+function saveHiddenCodeToHistory(code) {
+    conversationHistory.push({ role: 'user', content: code });
+}
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Funktion: Sperrt oder entsperrt das Eingabefeld basierend auf Links
+    function updateInputState(linkClass) {
+      const lastBotMessage = document.querySelector(".bot-message:last-child");
   
-      if (target.classList.contains('send-email-link') && target.id === 'FmpRateRP') {
-          event.preventDefault(); // Standard-Link-Verhalten verhindern
-          const message = target.textContent.trim(); // Text des Links lesen
-          const hiddenCode = target.id;
+      // Zu sperrende Felder finden
+      const inputField = document.getElementById("chatbot-input");
+      const inputIcon = document.getElementById("input-right");
+      const dropdownField = document.getElementById("chatbot-themes");
+      const dropdownOption = document.getElementById("theme");
   
-          // Nachricht in das Eingabefeld einfügen und senden
-          const inputField = document.getElementById('chatbot-input');
-          inputField.value = message; // Nachricht ins Feld einfügen
-          saveHiddenCodeToHistory(hiddenCode)
-          deleteLink2();
-          await openConfirmationModal();
-          sendMessage(); // Vorhandene Sende-Funktion aufrufen
-      }
-      if (target.classList.contains('send-email-link') && target.id !== 'FmpRateRP') {
-          event.preventDefault(); // Standard-Link-Verhalten verhindern
-          const message = target.textContent.trim(); // Text des Links lesen
-          const hiddenCode = target.id;
-  
-          // Nachricht in das Eingabefeld einfügen und senden
-          const inputField = document.getElementById('chatbot-input');
-          inputField.value = message; // Nachricht ins Feld einfügen
-          saveHiddenCodeToHistory(hiddenCode)
-          deleteLink2();
-          sendMessage(); // Vorhandene Sende-Funktion aufrufen
-      }
-  });
-
- 
-
-
-  document.addEventListener("DOMContentLoaded", function () {
-  // Funktion, um das Eingabefeld zu sperren oder zu entsperren
-  function checkForSendEmailLink() {
-    const botMessages = document.querySelectorAll(".bot-message");
-    const lastBotMessage = document.querySelector(".bot-message:last-child");
-
-    // Zu sperrende Felder finden
-    const inputField = document.getElementById("chatbot-input");
-    const inputIcon = document.getElementById("input-right");
-    const dropdownField = document.getElementById("chatbot-themes");
-    const dropdownOption = document.getElementById("theme");
-
-
-
-    if (inputField) {
-      if (lastBotMessage && lastBotMessage.querySelector(".send-email-link")) {
-        // Sperre das Eingabefeld, Icon und Dropdown, wenn send-email-link vorhanden ist
-        inputField.disabled = true;
-        if (inputIcon) inputIcon.disabled = true;
-        if (dropdownField) dropdownField.disabled = true;
-        if (dropdownOption) dropdownOption.disabled = true;
-      } else {
-        // Entsperre das Eingabefeld, Icon und Dropdown, wenn kein send-email-link vorhanden ist
-        inputField.disabled = false;
-        if (inputIcon) inputIcon.disabled = false;
-        if (dropdownField) dropdownField.disabled = false;
-        if (dropdownOption) dropdownOption.disabled = false;
+      if (inputField) {
+        if (lastBotMessage && lastBotMessage.querySelector(linkClass)) {
+          // Sperre Eingabefeld, Icon und Dropdown
+          inputField.disabled = true;
+          if (inputIcon) inputIcon.disabled = true;
+          if (dropdownField) dropdownField.disabled = true;
+          if (dropdownOption) dropdownOption.disabled = true;
+        } else {
+          // Entsperre Eingabefeld, Icon und Dropdown
+          inputField.disabled = false;
+          if (inputIcon) inputIcon.disabled = false;
+          if (dropdownField) dropdownField.disabled = false;
+          if (dropdownOption) dropdownOption.disabled = false;
+        }
       }
     }
-  }
-
-  // Beobachte Änderungen im DOM (für neue bot-messages)
-  const observer = new MutationObserver(checkForSendEmailLink);
-  const targetNode = document.getElementById("chatbot-container");
-
-  if (targetNode) {
-    observer.observe(targetNode, { childList: true, subtree: true });
-  }
-
-  // Führe die Überprüfung initial aus
-//  checkForSendEmailLink();
-});
+  
+    // Funktion: Check für "suggested-link"
+    function checkForSuggestedLink() {
+      updateInputState(".suggested-link");
+    }
+  
+    // Funktion: Check für "send-email-link"
+    function checkForSendEmailLink() {
+      updateInputState(".send-email-link");
+    }
+  
+    // Beobachte Änderungen im DOM (für neue bot-messages)
+    const observer = new MutationObserver(() => {
+      checkForSuggestedLink();
+      checkForSendEmailLink();
+    });
+  
+    const targetNode = document.getElementById("chatbot-container");
+  
+    if (targetNode) {
+      observer.observe(targetNode, { childList: true, subtree: true });
+    }
+  });
+  
 
 
 
 
 
 document.querySelectorAll('table').forEach((table) => {
-    table.classList.add('bot-table');
+  table.classList.add('bot-table');
 });
 
-
-  
 window.addEventListener('beforeunload', (event) => {
-    event.preventDefault(); // Standardverhalten verhindern
-    event.returnValue = ''; // Notwendig, um die Warnung auszulösen
+  event.preventDefault(); // Standardverhalten verhindern
+  event.returnValue = ''; // Notwendig, um die Warnung auszulösen
 });
 
- 
-  
-  //const passwort = prompt("Bitte geben Sie das Passwort ein:");
-  //if (passwort !== "vila") {
-  //  document.body.innerHTML = "Zugriff verweigert.";
-  //}
-  
-    
+//const passwort = prompt("Bitte geben Sie das Passwort ein:");
+//if (passwort !== "vila") {
+//  document.body.innerHTML = "Zugriff verweigert.";
+//}
+
+
   
   
   </script>
