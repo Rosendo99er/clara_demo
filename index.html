@@ -7487,7 +7487,10 @@
           document.body.classList.remove("modal-open"); // Modalität deaktivieren
   
   
+      
+      var messageValue = document.getElementById("modalEmail").value;
       var messageValue = document.getElementById("modalMessage").value;
+
   
       var companyName = getComputedStyle(document.documentElement).getPropertyValue('--company-name').replace(/"/g, '').trim();
       var companyEmail = getComputedStyle(document.documentElement).getPropertyValue('--company-email').replace(/"/g, '').trim();
