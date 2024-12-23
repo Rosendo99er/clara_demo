@@ -8071,10 +8071,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const lastBotMessage = document.querySelector(".bot-message:last-child");
       if (!lastBotMessage) {
-        console.warn('Keine .bot-message gefunden!');
-        return; // Beende die Funktion, wenn keine Nachricht gefunden wird
+          console.warn('Keine .bot-message gefunden!');
+      } else {
+          console.log('Gefundene bot-message:', lastBotMessage);
       }
-
 
       console.log(document.querySelector('.bot-message:last-child').innerHTML);
 
