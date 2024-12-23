@@ -8062,6 +8062,13 @@ function saveHiddenCodeToHistory(code) {
 document.addEventListener("DOMContentLoaded", function () {
     // Funktion: Sperrt oder entsperrt das Eingabefeld basierend auf Links
     function updateInputState(linkClass) {
+      const consentCheckbox = document.getElementById("chatbot-consent-checkbox");
+      
+      // Überprüfen, ob die Checkbox aktiviert ist
+      if (!consentCheckbox || !consentCheckbox.checked) {
+          return; // Beende die Funktion, wenn die Checkbox nicht aktiv ist
+      }
+
       const lastBotMessage = document.querySelector(".bot-message:last-child");
   
       // Zu sperrende Felder finden
@@ -8075,12 +8082,19 @@ document.addEventListener("DOMContentLoaded", function () {
           // Sperre Eingabefeld, Icon und Dropdown
           inputField.disabled = true;
           if (inputIcon) inputIcon.disabled = true;
+          if (inputIcon) {
+                inputIcon.style.pointerEvents = "none";
+                inputIcon.style.opacity = "0.5";
+          }
           if (dropdownField) dropdownField.disabled = true;
           if (dropdownOption) dropdownOption.disabled = true;
         } else {
           // Entsperre Eingabefeld, Icon und Dropdown
           inputField.disabled = false;
-          if (inputIcon) inputIcon.disabled = false;
+          if (inputIcon) {
+                inputIcon.style.pointerEvents = "auto";
+                inputIcon.style.opacity = "1";
+          }
           if (dropdownField) dropdownField.disabled = false;
           if (dropdownOption) dropdownOption.disabled = false;
         }
