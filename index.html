@@ -8109,22 +8109,31 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   
-    // Funktion: Check für "suggested-link"
     function checkForSuggestedLink() {
-      updateInputState(".suggested-link");
+        const lastBotMessage = document.querySelector('.bot-message:last-child');
+        if (!lastBotMessage) {
+            console.warn('Keine .bot-message gefunden!');
+            return; // Beende die Funktion, wenn keine Nachricht vorhanden ist
+        }
+        updateInputState('.suggested-link');
     }
-  
-    // Funktion: Check für "send-email-link"
+
     function checkForSendEmailLink() {
-      updateInputState(".send-email-link");
+        const lastBotMessage = document.querySelector('.bot-message:last-child');
+        if (!lastBotMessage) {
+            console.warn('Keine .bot-message gefunden!');
+            return;
+        }
+        updateInputState('.send-email-link');
     }
-  
+
     // Beobachte Änderungen im DOM (für neue bot-messages)
     const observer = new MutationObserver(() => {
+        console.log('DOM geändert:', document.querySelectorAll('.bot-message'));
         setTimeout(() => {
             checkForSuggestedLink();
             checkForSendEmailLink();
-        }, 50); // Verzögerung, um sicherzustellen, dass das DOM aktualisiert ist
+        }, 100); // Verzögerung, um sicherzustellen, dass das DOM aktualisiert ist
     });
   
     const targetNode = document.getElementById("chatbot-messages");
@@ -8134,6 +8143,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const consentCheckbox = document.getElementById('chatbot-consent-checkbox');
+
+    // Prüfen, ob die Checkbox existiert und aktiviert ist
+    if (consentCheckbox && consentCheckbox.checked) {
+        const initialBotMessage = document.querySelector('.bot-message:last-child');
+
+        // Prüfe, ob es bereits eine .bot-message gibt
+        if (initialBotMessage) {
+            console.log('Initiale bot-message gefunden:', initialBotMessage);
+            checkForSuggestedLink();
+            checkForSendEmailLink();
+        } else {
+            console.log('Keine initiale bot-message vorhanden.');
+        }
+    } else {
+        console.log('Checkbox nicht aktiviert. Initiale Prüfung übersprungen.');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
