@@ -4399,7 +4399,7 @@
   
   
   
-  #suggested-link {
+  .suggested-link {
       display: inline-block;
       font-family: var(--company-font-family);
       font-size: var(--font-size-button);
@@ -4414,7 +4414,7 @@
       text-align: center;
   }
   
-  #suggested-link:hover {
+  .suggested-link:hover {
       background-color: var(--secondary-button-color);
   }
   
@@ -6247,7 +6247,7 @@
   
   
   function deleteLink() {
-    const lastBotMessage = document.querySelectorAll('.bot-message:last-child #suggested-link');
+    const lastBotMessage = document.querySelectorAll('.bot-message:last-child .suggested-link');
       lastBotMessage.forEach(link => {
         const label = link.textContent;
         link.replaceWith(document.createTextNode(label));
@@ -8115,7 +8115,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.warn('Keine .bot-message gefunden!');
             return; // Beende die Funktion, wenn keine Nachricht vorhanden ist
         }
-        updateInputState('#suggested-link');
+        updateInputState('.suggested-link');
     }
 
     function checkForSendEmailLink() {
