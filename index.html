@@ -4443,15 +4443,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
   .bot-table, .bot-table th, .bot-table td {
     font-family: var(--company-font-family) !important;
     color: var(--website-standard-font-color-dark) !important;
@@ -7978,7 +7969,9 @@
 document.addEventListener('click', async function(event) {
     const target = event.target;
 
-    if (target.classList.contains('send-email-link') && target.id === 'FmpRateRP') {
+    const allowedIds = ['FmpRateRP', 'WQ_A1', 'WQ_A2', 'WQ_A3', 'WQ_A4'];
+
+    if (target.classList.contains('send-email-link') && allowedIds.includes(target.id)) {
         event.preventDefault(); // Standard-Link-Verhalten verhindern
         const message = target.textContent.trim(); // Text des Links lesen
         const hiddenCode = target.id;
@@ -7991,7 +7984,7 @@ document.addEventListener('click', async function(event) {
         await openConfirmationModal();
         sendMessage(); // Vorhandene Sende-Funktion aufrufen
     }
-    if (target.classList.contains('send-email-link') && target.id !== 'FmpRateRP') {
+    if (target.classList.contains('send-email-link') && !allowedIds.includes(target.id)) {
         event.preventDefault(); // Standard-Link-Verhalten verhindern
         const message = target.textContent.trim(); // Text des Links lesen
         const hiddenCode = target.id;
