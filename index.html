@@ -7440,8 +7440,9 @@
       document.getElementById("confirmSend").onclick = async function() {
           modal.style.display = "none";  // Dialog ausblenden
           document.body.classList.remove("modal-open"); // Modalität deaktivieren
-  
-     
+
+      var nameValue = document.getElementById("modalName").value;     
+      var emailValue = document.getElementById("modalEmail").value;     
       var messageValue = document.getElementById("modalMessage").value;
 
   
