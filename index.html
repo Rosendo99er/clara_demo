@@ -4620,7 +4620,7 @@
           <p><strong>Ihr Name:</strong><br>
           <input id="modalName" class="modal-contact-form-name" name="modalName" placeholder="Ihr Name" maxlength="500" autocomplete="name" required /><br>
           <p><strong>Ihre E-Mail-Adresse:</strong><br>
-          <input type="email" class="modal-contact-form-email" name="modalEmail" placeholder="Ihre E-Mail-Adresse" maxlength="500" autocomplete="email" required /><br>
+          <input id="modalEmail" type="email" class="modal-contact-form-email" name="modalEmail" placeholder="Ihre E-Mail-Adresse" maxlength="500" autocomplete="email" required /><br>
           <span id="modal-email-error" style="display: none; color: red; font-size: 0.9em;">Bitte geben Sie eine gültige E-Mail-Adresse ein.</span></p><br>
           <p><strong>Ihre Nachricht:</strong></p>
           <textarea id="modalMessage" class="modal-contact-form-nachricht" style="white-space:pre-wrap" name="Nachricht" rows="4" placeholder="Ihr Anliegen / Ihre Nachricht" maxlength="2000"></textarea>
@@ -7333,17 +7333,20 @@
   const aktennummerValue = activeContainer.querySelector('.contact-form-aktennummer')?.value || '';
   console.log('Aktennummer Value:', aktennummerValue);
   
+
+
+
   const nameValue = activeContainer.querySelector('.contact-form-name')?.value || '';
   console.log('Name Value:', nameValue);
   
   const emailValue = activeContainer.querySelector('.contact-form-email')?.value || '';
   console.log('Email Value:', emailValue);
-  
-  
-      
+          
   const messageValue = activeContainer.querySelector('.contact-form-nachricht')?.value || '';
   console.log('Message Value:', messageValue);
   
+
+
   // Felder im Modal befüllen
   const modalRechnungssteller = document.getElementById("modalRechnungssteller");
   console.log('Modal Rechnungssteller:', modalRechnungssteller);
@@ -7366,6 +7369,9 @@
       console.log('Aktennummer Value Set:', aktennummerValue);
   }
   
+
+
+
   
   const modalName = document.querySelector('input[name="modalName"]');
   console.log('Modal Name:', modalName);
