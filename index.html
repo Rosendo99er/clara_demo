@@ -463,7 +463,7 @@
   }
   
   
-  /* ++++++++++++++++++++++++ Anwendung Chati free ++++++++++++++++++++++++ 
+  /* ++++++++++++++++++++++++ Anwendung Chati free ++++++++++++++++++++++++ */
   
   :root {
   --rules-context: ChatbotIntern; 
@@ -904,7 +904,7 @@
 
 
   
-++++++++++++++++++++++++ ENDE Anwendung Chati free ++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++ ENDE Anwendung Chati free ++++++++++++++++++++++++ */
   
   
   
@@ -1032,7 +1032,7 @@
   
   
   
-  /* ++++++++++++++++++++++++ Anwendung Chatbot mit Kontaktformular ++++++++++++++++++++++++ */
+  /* ++++++++++++++++++++++++ Anwendung Chatbot mit Kontaktformular ++++++++++++++++++++++++ 
   
   :root {
   --rules-context: ChatbotContact; 
@@ -1830,7 +1830,7 @@
   
   
   
-     /* ++++++++++++++++++++++++ ENDE Anwendung Chatbot mit Kontaktformular ++++++++++++++++++++++++ */
+     ++++++++++++++++++++++++ ENDE Anwendung Chatbot mit Kontaktformular ++++++++++++++++++++++++ */
   
   
   /* ++++++++++++++++++++++++ Anwendung Chatbot für Factoring ++++++++++++++++++++++++ 
@@ -7270,57 +7270,7 @@
     
     // Den Chatbot-Container schließen
     document.getElementById('chatbot').style.display = 'none';
-  
-      // Bereich in Bearbeitung  
-    
-      //document.getElementById('input-button-container').style.display = 'none';
-  
-      // Den Wert der CSS-Variable aus :root abfragen
-      //const rootStyles = getComputedStyle(document.documentElement);
-      //const rulesContext = rootStyles.getPropertyValue('--rules-context').trim();
-  
-      
-      //if (rulesContext === 'ChatbotContact') {
-        
-      //  opencloseFactoringInstantAnswerDialogButtonContainer();
-        // Den Button "Sofortantwort schließen" ausblenden
-      //  document.getElementById('instant-answer-dialog-schliessen-button').style.display = 'none';
-      //  opencloseInstantAnswerDialogButtonContainer();
-  
-      //  document.getElementById('instant-answer-dialog-button-container').style.display = 'block';
-  
-        // Den Button "Sofortantwort" einblenden, da der Chatbot nun ausgeblendet ist
-      //  document.getElementById('instant-answer-dialog-button').style.display = 'block';
-        // Den Button "Nachricht senden" einblenden
-      //  document.getElementById('message-send-button').style.display = 'block';
-      // };
-  
-      //if (rulesContext === 'ChatbotContactFactoring') {
-      
-        //opencloseInstantAnswerDialogButtonContainer();
-             
-        //const factoringContainer = document.getElementById('factoring-instant-answer-dialog-button-container');
-        //factoringContainer.classList.remove('collapsed');
-        //factoringContainer.classList.remove('collapsible-container');
-        //factoringContainer.style.setProperty('display', 'flex', 'important');
-        //factoringContainer.style.removeProperty('max-height');
-        //factoringContainer.style.removeProperty('overflow');
-  
-  
-        
-        // Den Button "Sofortantwort schließen" ausblenden
-        //document.getElementById('factoring-instant-answer-dialog-schliessen-button').style.display = 'none';
-        //opencloseFactoringInstantAnswerDialogButtonContainer();
-  
-        //document.getElementById('factoring-instant-answer-dialog-button-container').style.display = 'flex';
-  
-        // Den Button "Sofortantwort" einblenden, da der Chatbot nun ausgeblendet ist
-        //document.getElementById('factoring-instant-answer-dialog-button').style.display = 'block';
-        // Den Button "Nachricht senden" einblenden
-        // document.getElementById('factoring-message-send-button').style.display = 'block';
-  
-        
-      // };
+
   
   }
   
@@ -7365,9 +7315,8 @@
   } else if (containerB && getComputedStyle(containerB).display !== 'none') {
       activeContainer = containerB;
   } else {
-      activeContainer = null;
-      console.error("Keiner der Container ist aktiv.");
-      return; // Funktion abbrechen, wenn kein Container existiert
+      activeContainer = containerB;
+      console.error("Keiner der Container ist aktiv, daher wird ContainerB als Fallback gesetzt.");
   }
   
   console.log('Active Container:', activeContainer);
