@@ -7514,8 +7514,26 @@
 
       formData.append('data', JSON.stringify(structuredData));
 
-      // Dateien hinzufügen
+      const ALLOWED_EXTENSIONS = ['pdf', 'jpg', 'jpeg', 'png'];
+      const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+
+
       for (var [_, file] of selectedFiles) {
+          const fileExtension = file.name.split('.').pop().toLowerCase();
+
+          // Prüfen, ob das Dateiformat erlaubt ist
+          if (!ALLOWED_EXTENSIONS.includes(fileExtension)) {
+              alert(`Ungültiges Dateiformat: ${file.name}. Erlaubte Formate: ${ALLOWED_EXTENSIONS.join(', ')}`);
+              continue; // Datei überspringen
+          }
+
+          // Prüfen, ob die Datei zu groß ist
+          if (file.size > MAX_FILE_SIZE) {
+              alert(`Die Datei ${file.name} ist zu groß. Maximale Größe: ${(MAX_FILE_SIZE / 1024 / 1024).toFixed(2)} MB.`);
+              continue; // Datei überspringen
+          }
+
+          // Nur gültige Dateien hinzufügen
           formData.append('files', file);
       }
 
