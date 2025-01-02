@@ -4596,7 +4596,7 @@
  
     <div id="email-loader" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
       <div class="spinner"></div>
-      <div id="loader-text">
+      <div id="email-loader-text">
         E-Mail wird versandt...
       </div>
 
@@ -7575,6 +7575,7 @@
 
       // Loader anzeigen
       document.getElementById('email-loader').style.display = 'block';
+      document.getElementById('email-loader-text').style.display = 'block';
 
       try {
         var response = await fetch('https://cream-collection-chati-main-1281403bbf31.herokuapp.com/send-email', {
@@ -7605,6 +7606,7 @@
     } finally {
         // Loader ausblenden
         document.getElementById('email-loader').style.display = 'none';
+        document.getElementById('email-loader-text').style.display = 'none';
     }
 
 
