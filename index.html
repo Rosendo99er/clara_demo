@@ -4523,8 +4523,8 @@
 .spinner {
     width: 50px;
     height: 50px;
-    border: 5px solid #f3f3f3; /* Light gray */
-    border-top: 5px solid #3498db; /* Blue */
+    border: 5px solid var(--tertiary-company-color);
+    border-top: 5px solid var(--primary-company-color);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -4533,11 +4533,6 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
-
-
-
-
 
 
 
@@ -4601,6 +4596,10 @@
  
     <div id="email-loader" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
       <div class="spinner"></div>
+      <div id="loader-text">
+        E-Mail wird versandt...
+      </div>
+
     </div>
   
 
