@@ -4520,22 +4520,69 @@
 }
 
 
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid var(--tertiary-company-color);
-    border-top: 5px solid var(--primary-company-color);
+
+
+#email-loader-container {
+    display: none; /* Standardmäßig ausgeblendet */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--primary-border-radius);
+  }
+  
+  #email-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0px 0px 0px 0px;
+  }
+  
+  .email-loader-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-loader-color);
     border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-
-#email-loader-text {
+    animation: wave 1.5s infinite ease-in-out;
+  }
+  
+  /* Animation für die Wellenbewegung */
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0) scale(1); /* Ausgangsposition */
+      opacity: 1;
+    }
+    25% {
+      transform: translateY(-10px) scale(1.5); /* Nach oben bewegen und größer werden */
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(0) scale(1); /* Zurück zur Mitte */
+      opacity: 1;
+    }
+    75% {
+      transform: translateY(10px) scale(0.8); /* Nach unten bewegen und kleiner werden */
+      opacity: 0.6;
+    }
+  }
+  
+  /* Zeitverzögerung für jeden Punkt */
+  .email-loader-dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .email-loader-dot:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  .email-loader-dot:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  #email-loader-text {
     font-family: var(--company-font-family);
     font-size: var(--font-size-subtitle);
     color: var(--primary-loader-color);
@@ -4547,9 +4594,6 @@
     max-width: 100%; 
     margin-top: 15px;
   }
-
-
-
 
 
 
@@ -4605,11 +4649,11 @@
 
     <div id="snowfall"></div>
  
-    <div id="email-loader">
-      <div id="loader">
-        <div class="loader-dot"></div>
-        <div class="loader-dot"></div>
-        <div class="loader-dot"></div>
+    <div id="email-loader-container">
+      <div id="email-loader">
+        <div class="email-loader-dot"></div>
+        <div class="email-loader-dot"></div>
+        <div class="email-loader-dot"></div>
       </div>
       <div id="email-loader-text">
         E-Mail wird versandt...
@@ -7590,7 +7634,9 @@
       }
 
       // Loader anzeigen
-      document.getElementById('email-loader').style.display = 'block';
+      const emailLoaderElement = document.getElementById('email-loader');
+      emailLoaderElement.style.display = 'flex';
+      document.getElementById('email-loader-container').style.display = 'block';
       document.getElementById('email-loader-text').style.display = 'block';
 
       try {
@@ -7621,10 +7667,11 @@
         console.error('Fehler beim Senden der Anfrage:', error);
     } finally {
         // Loader ausblenden
-        document.getElementById('email-loader').style.display = 'none';
+        const emailLoaderElement = document.getElementById('email-loader');
+        emailLoaderElement.style.display = 'none';
+        document.getElementById('email-loader-container').style.display = 'none';
         document.getElementById('email-loader-text').style.display = 'none';
     }
-
 
 };
 
