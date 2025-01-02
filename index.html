@@ -7518,24 +7518,36 @@
       const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
 
 
+      let isValid = true; // Statusvariable für Gültigkeit
+
       for (var [_, file] of selectedFiles) {
           const fileExtension = file.name.split('.').pop().toLowerCase();
 
           // Prüfen, ob das Dateiformat erlaubt ist
           if (!ALLOWED_EXTENSIONS.includes(fileExtension)) {
               alert(`Ungültiges Dateiformat: ${file.name}. Erlaubte Formate: ${ALLOWED_EXTENSIONS.join(', ')}`);
-              continue; // Datei überspringen
+              isValid = false; // Gültigkeit auf false setzen
+              break; // Verarbeitung abbrechen
           }
 
           // Prüfen, ob die Datei zu groß ist
           if (file.size > MAX_FILE_SIZE) {
               alert(`Die Datei ${file.name} ist zu groß. Maximale Größe: ${(MAX_FILE_SIZE / 1024 / 1024).toFixed(2)} MB.`);
-              continue; // Datei überspringen
+              isValid = false; // Gültigkeit auf false setzen
+              break; // Verarbeitung abbrechen
           }
 
           // Nur gültige Dateien hinzufügen
           formData.append('files', file);
       }
+
+      // Wenn Dateien ungültig sind, Dialog offen halten und Verarbeitung abbrechen
+      if (!isValid) {
+          modal.style.display = "flex"; // Dialog wieder anzeigen
+          document.body.classList.add("modal-open"); // Modalität aktivieren
+          return; // Verarbeitung beenden
+      }
+
 
 
       try {
