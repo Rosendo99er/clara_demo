@@ -4520,6 +4520,19 @@
 }
 
 
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3; /* Light gray */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 
 
@@ -4586,6 +4599,10 @@
 
     <div id="snowfall"></div>
  
+    <div id="email-loader" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
+      <div class="spinner"></div>
+    </div>
+  
 
     <div id="delete-confirmation-modal" class="modal-standard-background" aria-modal="true">
   
@@ -7557,7 +7574,8 @@
           return; // Verarbeitung beenden
       }
 
-
+      // Loader anzeigen
+      document.getElementById('email-loader').style.display = 'block';
 
       try {
         var response = await fetch('https://cream-collection-chati-main-1281403bbf31.herokuapp.com/send-email', {
@@ -7585,7 +7603,12 @@
         }
     } catch (error) {
         console.error('Fehler beim Senden der Anfrage:', error);
+    } finally {
+        // Loader ausblenden
+        document.getElementById('email-loader').style.display = 'none';
     }
+
+
 };
 
 
