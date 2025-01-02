@@ -7598,8 +7598,9 @@ async function openConfirmationModal() {
 
       const ALLOWED_EXTENSIONS = ['pdf', 'jpg', 'jpeg', 'png'];
       const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+      const MAX_TOTAL_SIZE = 20 * 1024 * 1024; // Maximalgröße aller Dateien zusammen (20 MB)
 
-
+      let totalSize = 0; // Gesamtsumme der Dateigrößen
       let isValid = true; // Statusvariable für Gültigkeit
 
       for (var [_, file] of selectedFiles) {
@@ -7618,6 +7619,17 @@ async function openConfirmationModal() {
               isValid = false; // Gültigkeit auf false setzen
               break; // Verarbeitung abbrechen
           }
+
+          // Gesamtsumme der Dateigrößen aktualisieren
+          totalSize += file.size;
+
+          // Prüfen, ob die Gesamtgröße überschritten wird
+          if (totalSize > MAX_TOTAL_SIZE) {
+              alert(`Die Gesamtsumme der Dateien überschreitet die maximale erlaubte Größe von ${(MAX_TOTAL_SIZE / 1024 / 1024).toFixed(2)} MB.`);
+              isValid = false; // Gültigkeit auf false setzen
+              break; // Verarbeitung abbrechen
+          }
+
 
           // Nur gültige Dateien hinzufügen
           formData.append('files', file);
