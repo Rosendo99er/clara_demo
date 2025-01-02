@@ -81,6 +81,7 @@
   
     --primary-button-color: var(--primary-company-color);
     --secondary-button-color: var(--secondary-company-color);
+    --tertiary-button-color: var(--tertiary-company-color);
   
     --primary-loader-color: var(--secondary-company-color);
     --secondary-loader-color: var(--primary-company-color);
@@ -296,6 +297,7 @@
 
   --primary-button-color: var(--primary-company-color);
   --secondary-button-color: var(--secondary-company-color);
+  --tertiary-button-color: var(--tertiary-company-color);
 
   --primary-loader-color: var(--secondary-company-color);
   --secondary-loader-color: var(--primary-company-color);
@@ -4473,16 +4475,21 @@
 
 
   .custom-file-upload {
-    background-color: #3FA6C7;
-    color: white;
+    font-family: var(--company-font-family);
+    font-size: var(--font-size-button);
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--primary-border-radius);
+    background-color: var(--primary-button-color);
+    color: var(--tertiary-font-color);
     cursor: pointer;
+    min-width: 150px;
+    text-align: center;
 }
 
+
 .custom-file-upload:hover {
-    background-color: #2A7594;
+    background-color: var(--secondary-button-color);
 }
 
 .file-item {
@@ -4491,22 +4498,25 @@
     align-items: center;
     margin-top: 5px;
     padding: 5px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    background-color: var(--primary-company-color-light);
+    border: 2px solid var(--form-and-field-border-color);
+    border-radius: var(--primary-border-radius);
 }
 
 .remove-file {
-    background-color: #D87A92;
-    color: white;
+    font-family: var(--company-font-family);
+    background-color: var(--secondary-button-color);
+    color: var(--tertiary-font-color);
     border: none;
     padding: 5px 10px;
-    border-radius: 3px;
+    border-radius: var(--primary-border-radius);
     cursor: pointer;
+    text-align: center;
 }
 
+
 .remove-file:hover {
-    background-color: #A15263;
+    background-color: var(--tertiary-button-color);
 }
 
 
@@ -4653,7 +4663,6 @@
           <span id="modal-email-error" style="display: none; color: red; font-size: 0.9em;">Bitte geben Sie eine gültige E-Mail-Adresse ein.</span></p><br>
           <p><strong>Ihre Nachricht:</strong></p>
           <textarea id="modalMessage" class="modal-contact-form-nachricht" style="white-space:pre-wrap" name="Nachricht" rows="4" placeholder="Ihr Anliegen / Ihre Nachricht" maxlength="2000"></textarea>
-          <p><strong>Dateien hochladen:</strong></p>
             <div class="file-upload-container">
               <button id="custom-upload-button" class="custom-file-upload">Dateien auswählen</button>
                 <input
