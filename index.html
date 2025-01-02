@@ -4649,19 +4649,7 @@
 
     <div id="snowfall"></div>
  
-    <div id="email-loader-container">
-      <div id="email-loader">
-        <div class="email-loader-dot"></div>
-        <div class="email-loader-dot"></div>
-        <div class="email-loader-dot"></div>
-      </div>
-      <div id="email-loader-text">
-        E-Mail wird versandt...
-      </div>
-    </div>
 
-
-  
 
     <div id="delete-confirmation-modal" class="modal-standard-background" aria-modal="true">
   
@@ -5376,9 +5364,18 @@
         </div>
   
   
-  
-  
-  
+        <div id="email-loader-container">
+          <div id="email-loader">
+            <div class="email-loader-dot"></div>
+            <div class="email-loader-dot"></div>
+            <div class="email-loader-dot"></div>
+          </div>
+          <div id="email-loader-text">
+            E-Mail wird versandt...
+          </div>
+        </div>
+
+ 
   
           <div id="chatbot-header">
   
@@ -7428,7 +7425,7 @@
   
   
   
-  async function openConfirmationModal() {
+async function openConfirmationModal() {
   
   // Container A und B abrufen
   const containerA = document.querySelector('#factoring-section-container');
@@ -8156,7 +8153,7 @@ document.addEventListener('click', async function(event) {
         saveHiddenCodeToHistory(hiddenCode)
         deleteLink2();
         await openConfirmationModal();
-        sendMessage(); // Vorhandene Sende-Funktion aufrufen
+        //sendMessage();
     }
     if (target.classList.contains('send-email-link') && !allowedIds.includes(target.id)) {
         event.preventDefault(); // Standard-Link-Verhalten verhindern
@@ -8168,7 +8165,7 @@ document.addEventListener('click', async function(event) {
         inputField.value = message; // Nachricht ins Feld einfügen
         saveHiddenCodeToHistory(hiddenCode)
         deleteLink2();
-        sendMessage(); // Vorhandene Sende-Funktion aufrufen
+        sendMessage();
     }
 });
 
