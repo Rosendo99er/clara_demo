@@ -6312,7 +6312,8 @@
       } catch (error) {
           console.error("Request failed:", error);
           const errorElement = document.createElement('div');
-          errorElement.textContent = 'Error: ' + error.message;
+          errorElement.className = 'bot-message'; // Optionale Klasse für Styling
+          errorElement.textContent = 'Das hat leider nicht geklappt. Bitte entschuldigen Sie die Unannehmlichkeiten und wiederholen Sie Ihre Anfrage. Sollte Ihre Anfrage wiederholt nicht beantwortet werden können, warten Sie bitte ein paar Minuten und versuchen Sie es dann erneut.';
           messagesElement.appendChild(errorElement);
   
           // Status zurücksetzen
@@ -7314,8 +7315,12 @@
           return receivedText.trim(); // Gibt den gesamten Text zurück, wenn der Vorgang abgeschlossen ist
   
       } catch (error) {
-          console.error("Fehler bei der Übersetzung:", error);  // Fehlerbehandlung
-      } finally {
+          console.error("Fehler bei der Übersetzung:", error);
+          const errorElement = document.createElement('div');
+          errorElement.className = 'bot-message'; // Optionale Klasse für Styling
+          errorElement.textContent = 'Die Übersetzung der Chathistorie konnte nicht durchgeführt werden. Wir bemühen uns dennoch um eine kurzfristige Beantwortung Ihrer Anfrage.';
+          messagesElement.appendChild(errorElement);
+       } finally {
           // Loader verstecken
           loaderElement.style.display = 'none';
           document.getElementById('loader-container').style.display = 'none';
@@ -7673,7 +7678,12 @@ async function openConfirmationModal() {
             console.error('Fehler beim Senden der E-Mail:', result.error);
         }
     } catch (error) {
-        console.error('Fehler beim Senden der Anfrage:', error);
+          console.error("Fehler beim Senden der Anfrage:", error);
+          const errorElement = document.createElement('div');
+          errorElement.className = 'bot-message'; // Optionale Klasse für Styling
+          errorElement.textContent = 'Der Versand der E-Mail hat leider nicht geklappt. Bitte entschuldigen Sie die Unannehmlichkeiten und wiederholen Sie den Vorgang. Sollte Ihre Anfrage wiederholt nicht versendet werden können, warten Sie bitte ein paar Minuten und versuchen Sie es dann erneut.';
+          messagesElement.appendChild(errorElement);
+        
     } finally {
         // Loader ausblenden
         const emailLoaderElement = document.getElementById('email-loader');
@@ -8159,9 +8169,9 @@ document.addEventListener('click', async function(event) {
         const message = target.textContent.trim(); // Text des Links lesen
         const hiddenCode = target.id;
 
-        // Nachricht in das Eingabefeld einfügen und senden
-        const inputField = document.getElementById('chatbot-input');
-        inputField.value = message; // Nachricht ins Feld einfügen
+        // Nachricht in das Eingabefeld einfügen und senden - Funktion entfernt, da nicht sinnvoll
+        //const inputField = document.getElementById('chatbot-input');
+        //inputField.value = message; // Nachricht ins Feld einfügen
         saveHiddenCodeToHistory(hiddenCode)
         deleteLink2();
         await openConfirmationModal();
