@@ -7430,7 +7430,7 @@
   
   
   
-async function openConfirmationModal() {
+  async function openConfirmationModal() {
   
   // Container A und B abrufen
   const containerA = document.querySelector('#factoring-section-container');
@@ -7608,7 +7608,6 @@ async function openConfirmationModal() {
       let totalSize = 0; // Gesamtsumme der Dateigrößen
       let isValid = true; // Statusvariable für Gültigkeit
 
-    if (selectedFiles && selectedFiles.length > 0) {  
       for (var [_, file] of selectedFiles) {
           const fileExtension = file.name.split('.').pop().toLowerCase();
 
@@ -7640,16 +7639,6 @@ async function openConfirmationModal() {
           // Nur gültige Dateien hinzufügen
           formData.append('files', file);
       }
-    }
-      // Prüfen, ob weder Dateien noch eine Nachricht oder Chat-Historie vorhanden sind
-      if ((!selectedFiles || selectedFiles.length === 0) && !messageValue && !translatedChatHistory) {
-          alert("Bitte geben Sie mindestens eine Nachricht, Chat-Historie oder Datei an.");
-          // Modal bleibt offen
-          modal.style.display = "flex"; 
-          document.body.classList.add("modal-open");
-          return; // Verarbeitung beenden
-      }
-
 
       // Wenn Dateien ungültig sind, Dialog offen halten und Verarbeitung abbrechen
       if (!isValid) {
@@ -7689,12 +7678,7 @@ async function openConfirmationModal() {
             console.error('Fehler beim Senden der E-Mail:', result.error);
         }
     } catch (error) {
-          console.error("Fehler beim Senden der Anfrage:", error);
-          const errorElement = document.createElement('div');
-          errorElement.className = 'bot-message'; // Optionale Klasse für Styling
-          errorElement.textContent = 'Der Versand der E-Mail hat leider nicht geklappt. Bitte entschuldigen Sie die Unannehmlichkeiten und wiederholen Sie den Vorgang. Sollte Ihre Anfrage wiederholt nicht versendet werden können, warten Sie bitte ein paar Minuten und versuchen Sie es dann erneut.';
-          messagesElement.appendChild(errorElement);
-        
+        console.error('Fehler beim Senden der Anfrage:', error);
     } finally {
         // Loader ausblenden
         const emailLoaderElement = document.getElementById('email-loader');
@@ -7715,7 +7699,7 @@ async function openConfirmationModal() {
   
   }, 500); // Wartezeit (500 ms) nach dem Scrollen
   }
-  
+
   
   
   function fillModalContent() {
