@@ -7641,9 +7641,12 @@ async function openConfirmationModal() {
           formData.append('files', file);
       }
     }
-      // Prüfen, ob keine Dateien vorhanden sind und keine Nachricht eingegeben wurde
-      if ((!selectedFiles || selectedFiles.length === 0) && !messageValue) {
-          alert("Bitte geben Sie eine Nachricht ein oder fügen Sie mindestens eine Datei hinzu.");
+      // Prüfen, ob weder Dateien noch eine Nachricht oder Chat-Historie vorhanden sind
+      if ((!selectedFiles || selectedFiles.length === 0) && !messageValue && !translatedChatHistory) {
+          alert("Bitte geben Sie mindestens eine Nachricht, Chat-Historie oder Datei an.");
+          // Modal bleibt offen
+          modal.style.display = "flex"; 
+          document.body.classList.add("modal-open");
           return; // Verarbeitung beenden
       }
 
