@@ -7608,6 +7608,7 @@ async function openConfirmationModal() {
       let totalSize = 0; // Gesamtsumme der Dateigrößen
       let isValid = true; // Statusvariable für Gültigkeit
 
+    if (selectedFiles && selectedFiles.length > 0) {  
       for (var [_, file] of selectedFiles) {
           const fileExtension = file.name.split('.').pop().toLowerCase();
 
@@ -7639,6 +7640,13 @@ async function openConfirmationModal() {
           // Nur gültige Dateien hinzufügen
           formData.append('files', file);
       }
+    }
+      // Prüfen, ob keine Dateien vorhanden sind und keine Nachricht eingegeben wurde
+      if ((!selectedFiles || selectedFiles.length === 0) && !messageValue) {
+          alert("Bitte geben Sie eine Nachricht ein oder fügen Sie mindestens eine Datei hinzu.");
+          return; // Verarbeitung beenden
+      }
+
 
       // Wenn Dateien ungültig sind, Dialog offen halten und Verarbeitung abbrechen
       if (!isValid) {
